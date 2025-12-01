@@ -67,17 +67,7 @@ class Ui_CASH(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.general_information.sizePolicy().hasHeightForWidth())
         self.general_information.setSizePolicy(sizePolicy)
-        self.general_information.setStyleSheet("QWidget {\n"
-"    background: #E6D6C8;\n"
-"\n"
-"    color: #1C1C1E;\n"
-"\n"
-"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
-"    font-size: 13px;\n"
-"\n"
-"    border: 1px solid #8EA5B8;\n"
-"    border-radius: 12px;\n"
-"}")
+        self.general_information.setStyleSheet("")
         self.general_information.setObjectName("general_information")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.general_information)
         self.gridLayout_2.setVerticalSpacing(3)

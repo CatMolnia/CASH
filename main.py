@@ -23,8 +23,8 @@ class Cash(QWidget):
         config = AppWindowConfig()
         general_information = GeneralInformation()
         
-        self.ui_manager = StartWindow(config, general_information)
-        self.ui_manager.apply(self)
+        self.ui_manager = StartWindow(config, general_information) # применяем стили к окну
+        self.ui_manager.apply(self) # применяем стили к окну
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
