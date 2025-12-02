@@ -12,47 +12,10 @@ class AppWindowConfig:
     default_size: str = "default"
 
 class GeneralInformation:
-    label_title = (
-        "color: black; "
-        "background-color: #F1F2F3; "
-        "border-radius: 6px; "
-        "padding: 4px 10px; "
-        "font-size: 12px; "
-        "font-weight: 800;"
-    )
-
-    label_calendar = (
-        "color: white; "
-        "background-color: #805A3B; "
-        "border-radius: 6px; "
-        "padding: 4px 10px; "
-        "font-size: 10px; "
-        "font-weight: 500;"
-    )
-
-    label_work = (
-        "color: white; "
-        "background-color: #805A3B; "
-        "border-radius: 6px; "
-        "padding: 4px 10px; "
-        "font-size: 10px; "
-        "font-weight: 500;"
-    )
-
-    label_weekend = (
-        "color: white; "
-        "background-color: #805A3B; "
-        "border-radius: 6px; "
-        "padding: 4px 10px; "
-        "font-size: 10px; "
-        "font-weight: 500;"
-    )
-
     general_information = {
         "style": (
             "QWidget#general_information { "
-            "background: qlineargradient(x1:0, y1:0, x2:0, y2:1, "
-            "stop:0 #F8EDE0, stop:1 #E6D6C8); "
+            "background-color: white; "
             "border: none; "
             "border-radius: 12px; "
             "margin: 0px 2px 6px 2px; "
@@ -65,3 +28,43 @@ class GeneralInformation:
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }
+    
+    label_title = (
+        "color: #4B5563; "
+        "background-color: white; "
+        "border: none; "
+        "font-size: 16px; "
+        "font-weight: 800;"
+    )
+
+    label_calendar = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 6px 12px; "
+        "font-size: 11px; "
+        "font-weight: 500;"
+    )
+
+    label_work = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 6px 12px; "
+        "font-size: 11px; "
+        "font-weight: 500;"
+    )
+
+    label_weekend = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 6px 12px; "
+        "font-size: 11px; "
+        "font-weight: 500;"
+    )
+
+    

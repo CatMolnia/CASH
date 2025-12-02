@@ -10,30 +10,30 @@ class StartWindow:
 
     def apply(self, widget: QWidget):
         # _________________________________CASH_________________________________
-        sizes = self.config.sizes
-        size_key = self.config.default_size
-        width, height = sizes.get(size_key, next(iter(sizes.values())))
-        widget.resize(width, height)
+        sizes = self.config.sizes # размеры из конфига
+        size_key = self.config.default_size # ключ из конфига
+        width, height = sizes.get(size_key, next(iter(sizes.values()))) # размеры из конфига
+        widget.resize(width, height) # изменяем размер окна
 
         # _________________________________general_information_________________________________
         # виджет general_information - применяем стили и эффект тени
-        gi_config = self.general_information.general_information
-        widget.ui.general_information.setStyleSheet(gi_config["style"])
+        gi_config = self.general_information.general_information # конфиг из конфига
+        widget.ui.general_information.setStyleSheet(gi_config["style"]) # применяем стиль к виджету general_information
         
         # добавляем эффект размытой тени (параметры из конфига)
-        shadow_params = gi_config["shadow"]
-        shadow = QGraphicsDropShadowEffect()
-        shadow.setBlurRadius(shadow_params["blur_radius"])
-        shadow.setXOffset(shadow_params["x_offset"])
-        shadow.setYOffset(shadow_params["y_offset"])
-        shadow.setColor(QColor(*shadow_params["color"]))
-        widget.ui.general_information.setGraphicsEffect(shadow)
+        shadow_params = gi_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.general_information.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету general_information
         
         # label
-        widget.ui.label_title.setStyleSheet(self.general_information.label_title)
-        widget.ui.label_calendar.setStyleSheet(self.general_information.label_calendar)
-        widget.ui.label_work.setStyleSheet(self.general_information.label_work)
-        widget.ui.label_weekend.setStyleSheet(self.general_information.label_weekend)
+        widget.ui.label_title.setStyleSheet(self.general_information.label_title) # применяем стиль к label_title
+        widget.ui.label_calendar.setStyleSheet(self.general_information.label_calendar) # применяем стиль к label_calendar
+        widget.ui.label_work.setStyleSheet(self.general_information.label_work) # применяем стиль к label_work
+        widget.ui.label_weekend.setStyleSheet(self.general_information.label_weekend) # применяем стиль к label_weekend
         
         # lineEdit
         widget.ui.lineEdit_calendar.setReadOnly(True) # отключаем редактирование на lineEdit_calendar
