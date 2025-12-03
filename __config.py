@@ -99,3 +99,22 @@ class GeneralInformation:
         "font-size: 12px; "
         "font-weight: 500;"
     )
+
+class SecondaryInformation:
+    # конфиг для secondary_information
+    secondary_information = {
+        "style": (
+            "QWidget#secondary_information { "
+            "background-color: #F1F2F3; "
+            "border: none; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 4,
+            "y_offset": 4,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }

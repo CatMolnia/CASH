@@ -1,13 +1,14 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
-from __config import AppWindowConfig, GeneralInformation
+from __config import AppWindowConfig, GeneralInformation, SecondaryInformation
 import resources_rc
 
 class StartWindow:
-    def __init__(self, config: AppWindowConfig, general_information: GeneralInformation):
+    def __init__(self, config: AppWindowConfig, general_information: GeneralInformation, secondary_information: SecondaryInformation):
         self.config = config
         self.general_information = general_information
+        self.secondary_information = secondary_information
 
     def apply(self, widget: QWidget):
         # _________________________________CASH_________________________________
@@ -73,7 +74,6 @@ class StartWindow:
         widget.ui.lineEdit_work.setStyleSheet(self.general_information.lineEdit_work) # применяем стиль к lineEdit_work
         widget.ui.lineEdit_weekend.setStyleSheet(self.general_information.lineEdit_weekend) # применяем стиль к lineEdit_weekend
         
-        # lineEdit
         widget.ui.lineEdit_calendar.setReadOnly(True) # отключаем редактирование на lineEdit_calendar
         widget.ui.lineEdit_calendar.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_calendar
         widget.ui.lineEdit_calendar.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_calendar
@@ -83,3 +83,22 @@ class StartWindow:
         widget.ui.lineEdit_work.setReadOnly(True)
         widget.ui.lineEdit_work.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         widget.ui.lineEdit_work.setMaximumSize(QSize(35, 16777215))
+
+        # _________________________________secondary_information_________________________________
+        # виджет secondary_information - применяем стили и эффект тени
+        si_config = self.secondary_information.secondary_information # конфиг из конфига
+        widget.ui.secondary_information.setStyleSheet(si_config["style"]) # применяем стиль к виджету secondary_information
+        
+        # добавляем эффект размытой тени (параметры из конфига)
+        shadow_params = si_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.secondary_information.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету secondary_information
+
+        widget.ui.spinBox_zp.setReadOnly(False) # оставлем редактирование на spinBox_zp
+        widget.ui.spinBox_zp.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на spinBox_zp
+        widget.ui.spinBox_avans.setReadOnly(False) # оставлем редактирование на spinBox_avans
+        widget.ui.spinBox_avans.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на spinBox_avans
