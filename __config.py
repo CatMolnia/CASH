@@ -41,8 +41,7 @@ class GeneralInformation:
 
     label_calendar = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -55,8 +54,7 @@ class GeneralInformation:
 
     label_work = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -69,8 +67,7 @@ class GeneralInformation:
 
     label_weekend = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -84,8 +81,7 @@ class GeneralInformation:
     # конфиг для lineEdit
     lineEdit_calendar = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -98,8 +94,7 @@ class GeneralInformation:
 
     lineEdit_work = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -110,10 +105,10 @@ class GeneralInformation:
         "font-weight: 500;"
     )
 
+
     lineEdit_weekend = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -123,6 +118,7 @@ class GeneralInformation:
         "font-size: 16px; "
         "font-weight: 500;"
     )
+
 
 class SecondaryInformation:
     # конфиг для secondary_information
@@ -145,8 +141,7 @@ class SecondaryInformation:
 
     label_day_zp = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -157,10 +152,10 @@ class SecondaryInformation:
         "font-weight: 500;"
     )
 
+
     label_day_avans = (
         "color: #4B5563; "
-        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
-        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "background-color: #CBD5E1; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
