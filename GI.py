@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
-from PyQt6.QtCore import Qt
+from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
 from __config import AppWindowConfig, GeneralInformation
 import resources_rc
@@ -29,9 +29,6 @@ class StartWindow:
         shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
         shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
         widget.ui.general_information.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету general_information
-        
-        # label
-        widget.ui.label_title.setStyleSheet(self.general_information.label_title) # применяем стиль к label_title
         
         # добавляем иконки
         calendar_icon_path = ":/icons/icons/calendar.png"
@@ -65,15 +62,24 @@ class StartWindow:
         widget.ui.label_work.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
         widget.ui.label_weekend.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
         
-        # применяем стили к label
+        # применяем стили:
+        # к label
+        widget.ui.label_title.setStyleSheet(self.general_information.label_title) # применяем стиль к label_title
         widget.ui.label_calendar.setStyleSheet(self.general_information.label_calendar) # применяем стиль к label_calendar
         widget.ui.label_work.setStyleSheet(self.general_information.label_work) # применяем стиль к label_work
         widget.ui.label_weekend.setStyleSheet(self.general_information.label_weekend) # применяем стиль к label_weekend
+        # к lineEdit
+        widget.ui.lineEdit_calendar.setStyleSheet(self.general_information.lineEdit_calendar) # применяем стиль к lineEdit_calendar
+        widget.ui.lineEdit_work.setStyleSheet(self.general_information.lineEdit_work) # применяем стиль к lineEdit_work
+        widget.ui.lineEdit_weekend.setStyleSheet(self.general_information.lineEdit_weekend) # применяем стиль к lineEdit_weekend
         
         # lineEdit
         widget.ui.lineEdit_calendar.setReadOnly(True) # отключаем редактирование на lineEdit_calendar
         widget.ui.lineEdit_calendar.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_calendar
+        widget.ui.lineEdit_calendar.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_calendar
         widget.ui.lineEdit_weekend.setReadOnly(True)
         widget.ui.lineEdit_weekend.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        widget.ui.lineEdit_weekend.setMaximumSize(QSize(35, 16777215))
         widget.ui.lineEdit_work.setReadOnly(True)
         widget.ui.lineEdit_work.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        widget.ui.lineEdit_work.setMaximumSize(QSize(35, 16777215))

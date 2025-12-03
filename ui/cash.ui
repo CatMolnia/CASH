@@ -108,7 +108,7 @@
                  <item>
                   <widget class="QLineEdit" name="lineEdit_calendar">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -150,7 +150,7 @@
                  <item>
                   <widget class="QLineEdit" name="lineEdit_work">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -192,7 +192,7 @@
                  <item>
                   <widget class="QLineEdit" name="lineEdit_weekend">
                    <property name="sizePolicy">
-                    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -214,6 +214,22 @@
                 </layout>
                </item>
               </layout>
+             </item>
+             <item row="1" column="0">
+              <spacer name="horizontalSpacer">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Minimum</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>5</height>
+                </size>
+               </property>
+              </spacer>
              </item>
             </layout>
            </widget>

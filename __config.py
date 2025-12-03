@@ -12,6 +12,8 @@ class AppWindowConfig:
     default_size: str = "default"
 
 class GeneralInformation:
+    
+    # конфиг для general_information
     general_information = {
         "style": (
             "QWidget#general_information { "
@@ -33,7 +35,7 @@ class GeneralInformation:
         "color: #4B5563; "
         "background-color: white; "
         "border: none; "
-        "font-size: 16px; "
+        "font-size: 30px; "
         "font-weight: 800;"
     )
 
@@ -44,7 +46,7 @@ class GeneralInformation:
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
-        "font-weight: 400;"
+        "font-weight: 500;"
     )
 
     label_work = (
@@ -54,7 +56,7 @@ class GeneralInformation:
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
-        "font-weight: 400;"
+        "font-weight: 500;"
     )
 
     label_weekend = (
@@ -64,7 +66,36 @@ class GeneralInformation:
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
-        "font-weight: 400;"
+        "font-weight: 500;"
     )
 
-    
+    # конфиг для lineEdit
+    lineEdit_calendar = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
+    )
+
+    lineEdit_work = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
+    )
+
+    lineEdit_weekend = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
+    )
