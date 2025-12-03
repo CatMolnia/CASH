@@ -57,7 +57,7 @@ class StartWindow:
             widget.ui.label_calendar.setText(icon_html)
             widget.ui.label_work.setText(work_icon_html)
             widget.ui.label_weekend.setText(weekend_icon_html)
-        
+
         # выравниваем по левому краю
         widget.ui.label_calendar.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
         widget.ui.label_work.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
@@ -75,14 +75,16 @@ class StartWindow:
         widget.ui.lineEdit_weekend.setStyleSheet(self.general_information.lineEdit_weekend) # применяем стиль к lineEdit_weekend
         
         widget.ui.lineEdit_calendar.setReadOnly(True) # отключаем редактирование на lineEdit_calendar
+        widget.ui.lineEdit_weekend.setReadOnly(True) # отключаем редактирование на lineEdit_weekend
+        widget.ui.lineEdit_work.setReadOnly(True) # отключаем редактирование на lineEdit_work
+
         widget.ui.lineEdit_calendar.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_calendar
+        widget.ui.lineEdit_weekend.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_weekend
+        widget.ui.lineEdit_work.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_work
+
         widget.ui.lineEdit_calendar.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_calendar
-        widget.ui.lineEdit_weekend.setReadOnly(True)
-        widget.ui.lineEdit_weekend.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        widget.ui.lineEdit_weekend.setMaximumSize(QSize(35, 16777215))
-        widget.ui.lineEdit_work.setReadOnly(True)
-        widget.ui.lineEdit_work.setFocusPolicy(Qt.FocusPolicy.NoFocus)
-        widget.ui.lineEdit_work.setMaximumSize(QSize(35, 16777215))
+        widget.ui.lineEdit_weekend.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_weekend
+        widget.ui.lineEdit_work.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_work
 
         # _________________________________secondary_information_________________________________
         # виджет secondary_information - применяем стили и эффект тени
@@ -102,3 +104,36 @@ class StartWindow:
         widget.ui.spinBox_zp.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на spinBox_zp
         widget.ui.spinBox_avans.setReadOnly(False) # оставлем редактирование на spinBox_avans
         widget.ui.spinBox_avans.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на spinBox_avans
+
+        zp_icon_path = ":/icons/icons/zp.png"
+        avans_icon_path = ":/icons/icons/avans.png"
+
+        zp_icon = QPixmap(zp_icon_path)
+        avans_icon = QPixmap(avans_icon_path)
+
+        if not zp_icon.isNull() and not avans_icon.isNull():
+            # Сохраняем оригинальный текст
+            original_zp_text = widget.ui.label_day_zp.text()
+            original_avans_text = widget.ui.label_day_avans.text()
+            
+            # Создаем HTML с иконкой и текстом (иконка слева, текст по центру)
+            zp_icon_html = f'<table style="width: 100%; height: 100%;"><tr><td style="vertical-align: middle; width: 28px; padding-right: 4px;"><img src="{zp_icon_path}" width="24" height="24" style="vertical-align: middle;"></td><td style="vertical-align: middle; text-align: center;">{original_zp_text}</td></tr></table>'
+            avans_icon_html = f'<table style="width: 100%; height: 100%;"><tr><td style="vertical-align: middle; width: 28px; padding-right: 4px;"><img src="{avans_icon_path}" width="24" height="24" style="vertical-align: middle;"></td><td style="vertical-align: middle; text-align: center;">{original_avans_text}</td></tr></table>'
+            
+            # применяем HTML к label
+            widget.ui.label_day_zp.setText(zp_icon_html)
+            widget.ui.label_day_avans.setText(avans_icon_html)
+
+        # выравниваем по левому краю
+        widget.ui.label_day_zp.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
+        widget.ui.label_day_avans.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
+        
+        # применяем стили:
+        # к label
+        widget.ui.label_day_zp.setStyleSheet(self.secondary_information.label_day_zp) # применяем стиль к label_day_zp
+        widget.ui.label_day_avans.setStyleSheet(self.secondary_information.label_day_avans) # применяем стиль к label_day_avans
+        # к spinBox
+        widget.ui.spinBox_zp.setStyleSheet(self.secondary_information.spinBox_zp) # применяем стиль к label_day_zp
+        widget.ui.spinBox_avans.setStyleSheet(self.secondary_information.spinBox_avans) # применяем стиль к label_day_zp
+        widget.ui.spinBox_zp.setMinimumSize(QSize(55, 16777215))
+        widget.ui.spinBox_avans.setMinimumSize(QSize(55, 16777215))

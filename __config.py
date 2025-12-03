@@ -76,7 +76,7 @@ class GeneralInformation:
         "background-color: #CBD5E1; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
-        "font-size: 12px; "
+        "font-size: 16px; "
         "font-weight: 500;"
     )
 
@@ -86,7 +86,7 @@ class GeneralInformation:
         "background-color: #CBD5E1; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
-        "font-size: 12px; "
+        "font-size: 16px; "
         "font-weight: 500;"
     )
 
@@ -96,7 +96,7 @@ class GeneralInformation:
         "background-color: #CBD5E1; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
-        "font-size: 12px; "
+        "font-size: 16px; "
         "font-weight: 500;"
     )
 
@@ -118,3 +118,73 @@ class SecondaryInformation:
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }
+
+    label_day_zp = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
+    )
+
+    label_day_avans = (
+        "color: #4B5563; "
+        "border: none; "
+        "background-color: #CBD5E1; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
+    )
+
+    spinBox_zp = (
+        "QSpinBox {"
+        "   color: #E5E7EB;"
+        "   background-color: #374151;"
+        "   border: 1px solid #4B5563;"
+        "   border-radius: 6px;"
+        "   padding: 4px 6px;"
+        "   font-size: 16px;"
+        "   selection-color: #E5E7EB;"
+        "   selection-background-color: transparent;"
+        "}"
+
+        "QSpinBox::up-button, QSpinBox::down-button {"
+        "   width: 20px;"
+        "   background: #4B5563;"
+        "   border: none;"
+        "}"
+        "QSpinBox::up-button:hover, QSpinBox::down-button:hover {"
+        "   background: #6B7280;"
+        "}"
+
+        "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
+        "QSpinBox::down-arrow { image: url(:/icons/down_light.svg); }"
+    )
+
+    spinBox_avans = (
+        "QSpinBox {"
+        "   color: #E5E7EB;"
+        "   background-color: #374151;"
+        "   border: 1px solid #4B5563;"
+        "   border-radius: 6px;"
+        "   padding: 4px 6px;"
+        "   font-size: 16px;"
+        "   selection-color: #E5E7EB;"
+        "   selection-background-color: transparent;"
+        "}"
+
+        "QSpinBox::up-button, QSpinBox::down-button {"
+        "   width: 20px;"
+        "   background: #4B5563;"
+        "   border: none;"
+        "}"
+        "QSpinBox::up-button:hover, QSpinBox::down-button:hover {"
+        "   background: #6B7280;"
+        "}"
+
+        "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
+        "QSpinBox::down-arrow { image: url(:/icons/down_light.svg); }"
+    )
