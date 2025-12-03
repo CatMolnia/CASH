@@ -41,8 +41,12 @@ class GeneralInformation:
 
     label_calendar = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
@@ -51,8 +55,12 @@ class GeneralInformation:
 
     label_work = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
@@ -61,8 +69,12 @@ class GeneralInformation:
 
     label_weekend = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
@@ -72,8 +84,12 @@ class GeneralInformation:
     # конфиг для lineEdit
     lineEdit_calendar = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 16px; "
@@ -82,8 +98,12 @@ class GeneralInformation:
 
     lineEdit_work = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 16px; "
@@ -92,8 +112,12 @@ class GeneralInformation:
 
     lineEdit_weekend = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 16px; "
@@ -121,8 +145,12 @@ class SecondaryInformation:
 
     label_day_zp = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "
@@ -131,8 +159,12 @@ class SecondaryInformation:
 
     label_day_avans = (
         "color: #4B5563; "
-        "border: none; "
-        "background-color: #CBD5E1; "
+        "background: qlineargradient(x1:0, y1:0, x2:1, y2:1, "
+        "stop:0 #94A3B8, stop:0.5 #CBD5E1, stop:1 #E2E8F0); "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
         "font-size: 12px; "

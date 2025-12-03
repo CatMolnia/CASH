@@ -105,6 +105,11 @@ class StartWindow:
         widget.ui.spinBox_avans.setReadOnly(False) # оставлем редактирование на spinBox_avans
         widget.ui.spinBox_avans.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на spinBox_avans
 
+        widget.ui.spinBox_zp.setMinimum(1) # устанавливаем минимальное значение 1
+        widget.ui.spinBox_zp.setMaximum(31) # устанавливаем максимальное значение 31
+        widget.ui.spinBox_avans.setMinimum(1) # устанавливаем минимальное значение 1
+        widget.ui.spinBox_avans.setMaximum(31) # устанавливаем максимальное значение 31
+
         zp_icon_path = ":/icons/icons/zp.png"
         avans_icon_path = ":/icons/icons/avans.png"
 
