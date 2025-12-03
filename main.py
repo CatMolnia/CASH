@@ -10,7 +10,6 @@ from cash import Ui_CASH
 from GI import StartWindow
 from __config import AppWindowConfig, GeneralInformation
 
-
 class Cash(QWidget):
     def __init__(self):
         super().__init__()

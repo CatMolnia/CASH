@@ -42,9 +42,9 @@ class GeneralInformation:
         "border: none; "
         "background-color: #CBD5E1; "
         "border-radius: 8px; "
-        "padding: 6px 12px; "
-        "font-size: 11px; "
-        "font-weight: 500;"
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 400;"
     )
 
     label_work = (
@@ -52,9 +52,9 @@ class GeneralInformation:
         "border: none; "
         "background-color: #CBD5E1; "
         "border-radius: 8px; "
-        "padding: 6px 12px; "
-        "font-size: 11px; "
-        "font-weight: 500;"
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 400;"
     )
 
     label_weekend = (
@@ -62,9 +62,9 @@ class GeneralInformation:
         "border: none; "
         "background-color: #CBD5E1; "
         "border-radius: 8px; "
-        "padding: 6px 12px; "
-        "font-size: 11px; "
-        "font-weight: 500;"
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 400;"
     )
 
     
