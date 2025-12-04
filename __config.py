@@ -183,8 +183,17 @@ class SecondaryInformation:
         "   background: #4B5563;"
         "   border: none;"
         "}"
+
         "QSpinBox::up-button:hover, QSpinBox::down-button:hover {"
         "   background: #6B7280;"
+        "}"
+
+        "QSpinBox::up-button {"
+        "   border-top-right-radius: 6px;"
+        "}"
+
+        "QSpinBox::down-button {"
+        "   border-bottom-right-radius: 6px;"
         "}"
 
         "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
@@ -208,8 +217,17 @@ class SecondaryInformation:
         "   background: #4B5563;"
         "   border: none;"
         "}"
+
         "QSpinBox::up-button:hover, QSpinBox::down-button:hover {"
         "   background: #6B7280;"
+        "}"
+
+        "QSpinBox::up-button {"
+        "   border-top-right-radius: 6px;"
+        "}"
+
+        "QSpinBox::down-button {"
+        "   border-bottom-right-radius: 6px;"
         "}"
 
         "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
