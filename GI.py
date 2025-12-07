@@ -1,15 +1,24 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
-from __config import AppWindowConfig, GeneralInformation, SecondaryInformation
+from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans
 import resources_rc
 
 class StartWindow:
-    def __init__(self, config: AppWindowConfig, general_information: GeneralInformation, secondary_information: SecondaryInformation):
-        self.config = config
-        self.general_information = general_information
-        self.secondary_information = secondary_information
+    def __init__(self, 
+                config: AppWindowConfig,
+                general_information: GeneralInformation,
+                secondary_information: SecondaryInformation,
+                widget_days_zp: WidgetDaysZp,
+                widget_days_avans: WidgetDaysAvans):
+        
+        self.config = config # конфиг из конфига
+        self.general_information = general_information # конфиг из конфига
+        self.secondary_information = secondary_information # конфиг из конфига
+        self.widget_days_zp = widget_days_zp # конфиг из конфига
+        self.widget_days_avans = widget_days_avans # конфиг из конфига
 
+    # применяем стили к окну
     def apply(self, widget: QWidget):
         # _________________________________CASH_________________________________
         sizes = self.config.sizes # размеры из конфига
@@ -18,6 +27,7 @@ class StartWindow:
         widget.resize(width, height) # изменяем размер окна
 
         # _________________________________general_information_________________________________
+        
         # виджет general_information - применяем стили и эффект тени
         gi_config = self.general_information.general_information # конфиг из конфига
         widget.ui.general_information.setStyleSheet(gi_config["style"]) # применяем стиль к виджету general_information
@@ -82,11 +92,12 @@ class StartWindow:
         widget.ui.lineEdit_weekend.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_weekend
         widget.ui.lineEdit_work.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на lineEdit_work
 
-        widget.ui.lineEdit_calendar.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_calendar
-        widget.ui.lineEdit_weekend.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_weekend
-        widget.ui.lineEdit_work.setMaximumSize(QSize(35, 16777215)) # увеличиваем максимальный размер lineEdit_work
+        widget.ui.lineEdit_calendar.setMaximumSize(QSize(40, 16777215)) # увеличиваем максимальный размер lineEdit_calendar
+        widget.ui.lineEdit_weekend.setMaximumSize(QSize(40, 16777215)) # увеличиваем максимальный размер lineEdit_weekend
+        widget.ui.lineEdit_work.setMaximumSize(QSize(40, 16777215)) # увеличиваем максимальный размер lineEdit_work
 
         # _________________________________secondary_information_________________________________
+        
         # виджет secondary_information - применяем стили и эффект тени
         si_config = self.secondary_information.secondary_information # конфиг из конфига
         widget.ui.secondary_information.setStyleSheet(si_config["style"]) # применяем стиль к виджету secondary_information
@@ -142,3 +153,37 @@ class StartWindow:
         widget.ui.spinBox_avans.setStyleSheet(self.secondary_information.spinBox_avans) # применяем стиль к label_day_zp
         widget.ui.spinBox_zp.setMinimumSize(QSize(55, 16777215))
         widget.ui.spinBox_avans.setMinimumSize(QSize(55, 16777215))
+
+        # _________________________________widget_days_zp_________________________________
+        
+        # виджет secondary_information - применяем стили и эффект тени
+        dz_config = self.widget_days_zp.widget_days_zp # конфиг из конфига
+        widget.ui.widget_days_zp.setStyleSheet(dz_config["style"]) # применяем стиль к виджету widget_days_zp
+        
+        # добавляем эффект размытой тени (параметры из конфига)
+        shadow_params = dz_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.widget_days_zp.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_zp
+
+        widget.ui.tableWidget_zp.setStyleSheet(self.widget_days_zp.tableWidget_zp) # применяем стиль к виджету widget_days_zp
+
+        # _________________________________widget_days_avans_________________________________
+        
+        # виджет widget_days_avans - применяем стили и эффект тени
+        da_config = self.widget_days_avans.widget_days_avans # конфиг из конфига
+        widget.ui.widget_days_avans.setStyleSheet(da_config["style"]) # применяем стиль к виджету widget_days_avans
+        
+        # добавляем эффект размытой тени (параметры из конфига)
+        shadow_params = da_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.widget_days_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_avans
+
+        widget.ui.tableWidget_avans.setStyleSheet(self.widget_days_avans.tableWidget_avans) # применяем стиль к виджету widget_days_

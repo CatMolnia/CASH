@@ -12,7 +12,12 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_CASH(object):
     def setupUi(self, CASH):
         CASH.setObjectName("CASH")
-        CASH.resize(1217, 876)
+        CASH.resize(1217, 521)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(CASH.sizePolicy().hasHeightForWidth())
+        CASH.setSizePolicy(sizePolicy)
         CASH.setStyleSheet("QWidget {\n"
 "    background-color: white;\n"
 "}")
@@ -141,7 +146,7 @@ class Ui_CASH(object):
         self.gridLayout_3.addItem(spacerItem, 1, 0, 1, 1)
         self.verticalLayout_2.addWidget(self.general_information)
         self.secondary_information = QtWidgets.QWidget(parent=self.widget_info)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.secondary_information.sizePolicy().hasHeightForWidth())
@@ -285,13 +290,13 @@ class Ui_CASH(object):
         self.horizontalLayout_2.addWidget(self.widget_calendar_3)
         self.gridLayout.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
         self.gridLayout_7.addWidget(self.widget_info, 0, 0, 1, 1)
-        self.widget_calculations = QtWidgets.QWidget(parent=CASH)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.widget_days = QtWidgets.QWidget(parent=CASH)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.widget_calculations.sizePolicy().hasHeightForWidth())
-        self.widget_calculations.setSizePolicy(sizePolicy)
-        self.widget_calculations.setStyleSheet("QWidget {\n"
+        sizePolicy.setHeightForWidth(self.widget_days.sizePolicy().hasHeightForWidth())
+        self.widget_days.setSizePolicy(sizePolicy)
+        self.widget_days.setStyleSheet("QWidget {\n"
 "    background: #F1F2F3;\n"
 "\n"
 "    color: #1C1C1E;\n"
@@ -302,8 +307,65 @@ class Ui_CASH(object):
 "    border: 1px solid #D8D8DB;\n"
 "    border-radius: 12px;\n"
 "}")
-        self.widget_calculations.setObjectName("widget_calculations")
-        self.gridLayout_7.addWidget(self.widget_calculations, 2, 0, 1, 1)
+        self.widget_days.setObjectName("widget_days")
+        self.gridLayout_6 = QtWidgets.QGridLayout(self.widget_days)
+        self.gridLayout_6.setObjectName("gridLayout_6")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.widget_days_zp = QtWidgets.QWidget(parent=self.widget_days)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_days_zp.sizePolicy().hasHeightForWidth())
+        self.widget_days_zp.setSizePolicy(sizePolicy)
+        self.widget_days_zp.setStyleSheet("QWidget {\n"
+"    background: #FFFFFF;\n"
+"\n"
+"    color: #1C1C1E;\n"
+"\n"
+"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
+"    font-size: 13px;\n"
+"\n"
+"    border: 1px solid #D8D8DB;\n"
+"    border-radius: 12px;\n"
+"}")
+        self.widget_days_zp.setObjectName("widget_days_zp")
+        self.gridLayout_9 = QtWidgets.QGridLayout(self.widget_days_zp)
+        self.gridLayout_9.setObjectName("gridLayout_9")
+        self.tableWidget_zp = QtWidgets.QTableWidget(parent=self.widget_days_zp)
+        self.tableWidget_zp.setObjectName("tableWidget_zp")
+        self.tableWidget_zp.setColumnCount(0)
+        self.tableWidget_zp.setRowCount(0)
+        self.gridLayout_9.addWidget(self.tableWidget_zp, 0, 0, 1, 1)
+        self.verticalLayout_7.addWidget(self.widget_days_zp)
+        self.widget_days_avans = QtWidgets.QWidget(parent=self.widget_days)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_days_avans.sizePolicy().hasHeightForWidth())
+        self.widget_days_avans.setSizePolicy(sizePolicy)
+        self.widget_days_avans.setStyleSheet("QWidget {\n"
+"    background: #FFFFFF;\n"
+"\n"
+"    color: #1C1C1E;\n"
+"\n"
+"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
+"    font-size: 13px;\n"
+"\n"
+"    border: 1px solid #D8D8DB;\n"
+"    border-radius: 12px;\n"
+"}")
+        self.widget_days_avans.setObjectName("widget_days_avans")
+        self.gridLayout_11 = QtWidgets.QGridLayout(self.widget_days_avans)
+        self.gridLayout_11.setObjectName("gridLayout_11")
+        self.tableWidget_avans = QtWidgets.QTableWidget(parent=self.widget_days_avans)
+        self.tableWidget_avans.setObjectName("tableWidget_avans")
+        self.tableWidget_avans.setColumnCount(0)
+        self.tableWidget_avans.setRowCount(0)
+        self.gridLayout_11.addWidget(self.tableWidget_avans, 0, 0, 1, 1)
+        self.verticalLayout_7.addWidget(self.widget_days_avans)
+        self.gridLayout_6.addLayout(self.verticalLayout_7, 0, 0, 1, 1)
+        self.gridLayout_7.addWidget(self.widget_days, 2, 0, 1, 1)
 
         self.retranslateUi(CASH)
         QtCore.QMetaObject.connectSlotsByName(CASH)

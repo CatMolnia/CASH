@@ -5,7 +5,7 @@ from typing import Dict, Tuple
 class AppWindowConfig:
     sizes: Dict[str, Tuple[int, int]] = field(
         default_factory=lambda: {
-            "default": (1024, 768)
+            "default": (1500, 750)
         }
     )
     
@@ -35,7 +35,7 @@ class GeneralInformation:
         "color: #4B5563; "
         "background-color: white; "
         "border: none; "
-        "font-size: 30px; "
+        "font-size: 32px; "
         "font-weight: 800;"
     )
 
@@ -119,7 +119,6 @@ class GeneralInformation:
         "font-weight: 500;"
     )
 
-
 class SecondaryInformation:
     # конфиг для secondary_information
     secondary_information = {
@@ -151,7 +150,6 @@ class SecondaryInformation:
         "font-size: 12px; "
         "font-weight: 500;"
     )
-
 
     label_day_avans = (
         "color: #4B5563; "
@@ -232,4 +230,68 @@ class SecondaryInformation:
 
         "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
         "QSpinBox::down-arrow { image: url(:/icons/down_light.svg); }"
+    )
+
+class WidgetDaysZp:
+    # конфиг для widget_days_zp
+    widget_days_zp = {
+        "style": (
+            "QWidget#widget_days_zp { "
+            "background-color: white; "
+            "border: none; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 4,
+            "y_offset": 4,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }
+
+    tableWidget_zp = (
+        "color: #4B5563; "
+        "background-color: #CBD5E1; "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
+    )
+
+class WidgetDaysAvans:
+    # конфиг для widget_days_avans
+    widget_days_avans = {
+        "style": (
+            "QWidget#widget_days_avans { "
+            "background-color: white; "
+            "border: none; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 4,
+            "y_offset": 4,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }
+
+    tableWidget_avans = (
+        "color: #4B5563; "
+        "background-color: #CBD5E1; "
+        "border-top: 2px solid #94A3B8; "
+        "border-left: 2px solid #94A3B8; "
+        "border-bottom: 2px solid #E2E8F0; "
+        "border-right: 2px solid #E2E8F0; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 12px; "
+        "font-weight: 500;"
     )

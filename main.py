@@ -8,7 +8,7 @@ from cash import Ui_CASH
 
 # импорт модулей
 from GI import StartWindow
-from __config import AppWindowConfig, GeneralInformation, SecondaryInformation
+from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans
 
 class Cash(QWidget):
     def __init__(self):
@@ -19,11 +19,13 @@ class Cash(QWidget):
         self._init_components()
 
     def _init_components(self):
-        config = AppWindowConfig()
-        general_information = GeneralInformation()
-        secondary_information = SecondaryInformation()
+        config = AppWindowConfig() # конфиг из конфига
+        general_information = GeneralInformation() # конфиг из конфига
+        secondary_information = SecondaryInformation() # конфиг из конфига
+        widget_days_zp = WidgetDaysZp() # конфиг из конфига
+        widget_days_avans = WidgetDaysAvans() # конфиг из конфига
         
-        self.ui_manager = StartWindow(config, general_information, secondary_information) # применяем стили к окну
+        self.ui_manager = StartWindow(config, general_information, secondary_information, widget_days_zp, widget_days_avans) # применяем стили к окну
         self.ui_manager.apply(self) # применяем стили к окну
 
 if __name__ == "__main__":
