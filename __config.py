@@ -193,9 +193,6 @@ class SecondaryInformation:
         "QSpinBox::down-button {"
         "   border-bottom-right-radius: 6px;"
         "}"
-
-        "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
-        "QSpinBox::down-arrow { image: url(:/icons/down_light.svg); }"
     )
 
     spinBox_avans = (
@@ -227,9 +224,6 @@ class SecondaryInformation:
         "QSpinBox::down-button {"
         "   border-bottom-right-radius: 6px;"
         "}"
-
-        "QSpinBox::up-arrow { image: url(:/icons/up_light.svg); }"
-        "QSpinBox::down-arrow { image: url(:/icons/down_light.svg); }"
     )
 
 class WidgetDaysZp:
@@ -252,16 +246,48 @@ class WidgetDaysZp:
     }
 
     tableWidget_zp = (
-        "color: #4B5563; "
-        "background-color: #CBD5E1; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 12px; "
-        "font-weight: 500;"
+        "QTableWidget {"
+            "color: #4B5563; "
+            "background-color: #CBD5E1; "
+            "border-top: 2px solid #94A3B8; "
+            "border-left: 2px solid #94A3B8; "
+            "border-bottom: 2px solid #E2E8F0; "
+            "border-right: 2px solid #E2E8F0; "
+            "border-radius: 8px; "
+            "padding: 4px 4px; "
+            "font-size: 12px; "
+            "font-weight: 500;"
+            "gridline-color: transparent;"
+        "}"
+        
+        "QHeaderView {"
+            "background-color: #374151;"
+            "border-radius: 8px;"
+        "}"
+
+        "QHeaderView::section {"
+            "color: #E5E7EB;"
+            "background-color: #374151;"
+            "font-weight: bold;"
+            "padding: 4px 4px;"
+            "border: none;"
+        "}"
+
+        "QHeaderView::section:first {"
+            "border-top-left-radius: 8px;"
+            "border-bottom-left-radius: 8px;"
+        "}"
+        
+        "QHeaderView::section:last {"
+            "border-top-right-radius: 8px;"
+            "border-bottom-right-radius: 8px;"
+        "}"
+        
+        "QTableWidget::item {"
+            "background-color: transparent;"
+            "border: 1px solid #94A3B8;"
+            "border-radius: 8px;"
+        "}"
     )
 
 class WidgetDaysAvans:
@@ -284,14 +310,46 @@ class WidgetDaysAvans:
     }
 
     tableWidget_avans = (
-        "color: #4B5563; "
-        "background-color: #CBD5E1; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 12px; "
-        "font-weight: 500;"
+        "QTableWidget {"
+            "color: #4B5563; "
+            "background-color: #CBD5E1; "
+            "border-top: 2px solid #94A3B8; "
+            "border-left: 2px solid #94A3B8; "
+            "border-bottom: 2px solid #E2E8F0; "
+            "border-right: 2px solid #E2E8F0; "
+            "border-radius: 8px; "
+            "padding: 4px 4px; "
+            "font-size: 12px; "
+            "font-weight: 500;"
+            "gridline-color: transparent;"
+        "}"
+        
+        "QHeaderView {"
+            "background-color: #374151;"
+            "border-radius: 8px;"
+        "}"
+
+        "QHeaderView::section {"
+            "color: #E5E7EB;"
+            "background-color: #374151;"
+            "font-weight: bold;"
+            "padding: 4px 4px;"
+            "border: none;"
+        "}"
+
+        "QHeaderView::section:first {"
+            "border-top-left-radius: 8px;"
+            "border-bottom-left-radius: 8px;"
+        "}"
+        
+        "QHeaderView::section:last {"
+            "border-top-right-radius: 8px;"
+            "border-bottom-right-radius: 8px;"
+        "}"
+
+        "QTableWidget::item {"
+            "background-color: transparent;"
+            "border: 1px solid #94A3B8;"
+            "border-radius: 8px;"
+        "}"
     )

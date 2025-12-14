@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
 from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans
@@ -171,6 +171,21 @@ class StartWindow:
 
         widget.ui.tableWidget_zp.setStyleSheet(self.widget_days_zp.tableWidget_zp) # применяем стиль к виджету widget_days_zp
 
+        # создаем таблицу для периода зарплаты
+        widget.ui.tableWidget_zp.horizontalHeader().setVisible(True) # скрываем горизонтальную заголовочную строку
+        widget.ui.tableWidget_zp.verticalHeader().setVisible(False) # скрываем вертикальную заголовочную строку
+        # задаем столбцы
+        widget.ui.tableWidget_zp.setRowCount(1)
+        widget.ui.tableWidget_zp.setColumnCount(15)
+        widget.ui.tableWidget_zp.setHorizontalHeaderLabels([
+            "6", "7", "8", "9", "10", "11", "12",
+            "13", "14", "15", "16", "17", "18", "19", "20"])
+        
+        widget.ui.tableWidget_zp.setShowGrid(False) # скрываем сетку
+
+        widget.ui.tableWidget_zp.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # настраиваем размеры столбцов для равномерного распределения по ширине виджета
+        widget.ui.tableWidget_zp.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # настраиваем размеры строк для равномерного распределения по высоте виджета
+
         # _________________________________widget_days_avans_________________________________
         
         # виджет widget_days_avans - применяем стили и эффект тени
@@ -187,3 +202,17 @@ class StartWindow:
         widget.ui.widget_days_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_avans
 
         widget.ui.tableWidget_avans.setStyleSheet(self.widget_days_avans.tableWidget_avans) # применяем стиль к виджету widget_days_
+
+        # создаем таблицу для периода зарплаты
+        widget.ui.tableWidget_avans.horizontalHeader().setVisible(True) # скрываем горизонтальную заголовочную строку
+        widget.ui.tableWidget_avans.verticalHeader().setVisible(False) # скрываем вертикальную заголовочную строку
+        widget.ui.tableWidget_avans.setRowCount(1)
+        widget.ui.tableWidget_avans.setColumnCount(11)
+        widget.ui.tableWidget_avans.setHorizontalHeaderLabels([
+            "21", "22", "23", "24", "25", "26", "27",
+            "28", "29", "30", "31"])
+
+        widget.ui.tableWidget_avans.setShowGrid(False) # скрываем сетку
+        
+        widget.ui.tableWidget_avans.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # настраиваем размеры столбцов для равномерного распределения по ширине виджета
+        widget.ui.tableWidget_avans.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # настраиваем размеры строк для равномерного распределения по высоте виджета

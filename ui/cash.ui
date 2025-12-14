@@ -487,8 +487,8 @@
     border-radius: 12px;
 }</string>
           </property>
-          <layout class="QGridLayout" name="gridLayout_9">
-           <item row="0" column="0">
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
             <widget class="QTableWidget" name="tableWidget_zp"/>
            </item>
           </layout>
