@@ -35,7 +35,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget {
-    background: #CCDCE8;  /* холодный металлик с голубым оттенком */
+    background: #A3BFD9;  /* холодный металлик с голубым оттенком */
 
     color: #1C1C1E;
 

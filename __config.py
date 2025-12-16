@@ -285,8 +285,23 @@ class WidgetDaysZp:
         
         "QTableWidget::item {"
             "background-color: transparent;"
-            "border: 1px solid #94A3B8;"
-            "border-radius: 8px;"
+            "border-top: 2px solid #94A3B8;"
+            "border-bottom: 2px solid #94A3B8;"
+            "border-left: none;"
+            "border-right: none;"
+            "border-radius: 0px;"
+        "}"
+        
+        "QTableWidget::item:first {"
+            "border-left: 2px solid #94A3B8;"
+            "border-top-left-radius: 8px;"
+            "border-bottom-left-radius: 8px;"
+        "}"
+
+        "QTableWidget::item:last {"
+            "border-right: 2px solid #94A3B8;"
+            "border-top-right-radius: 8px;"
+            "border-bottom-right-radius: 8px;"
         "}"
     )
 
@@ -346,10 +361,25 @@ class WidgetDaysAvans:
             "border-top-right-radius: 8px;"
             "border-bottom-right-radius: 8px;"
         "}"
-
+        
         "QTableWidget::item {"
             "background-color: transparent;"
-            "border: 1px solid #94A3B8;"
-            "border-radius: 8px;"
+            "border-top: 2px solid #94A3B8;"
+            "border-bottom: 2px solid #94A3B8;"
+            "border-left: none;"
+            "border-right: none;"
+            "border-radius: 0px;"
+        "}"
+        
+        "QTableWidget::item:first {"
+            "border-left: 2px solid #94A3B8;"
+            "border-top-left-radius: 8px;"
+            "border-bottom-left-radius: 8px;"
+        "}"
+
+        "QTableWidget::item:last {"
+            "border-right: 2px solid #94A3B8;"
+            "border-top-right-radius: 8px;"
+            "border-bottom-right-radius: 8px;"
         "}"
     )

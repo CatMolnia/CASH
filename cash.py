@@ -30,7 +30,7 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_info.sizePolicy().hasHeightForWidth())
         self.widget_info.setSizePolicy(sizePolicy)
         self.widget_info.setStyleSheet("QWidget {\n"
-"    background: #CCDCE8;  /* холодный металлик с голубым оттенком */\n"
+"    background: #A3BFD9;  /* холодный металлик с голубым оттенком */\n"
 "\n"
 "    color: #1C1C1E;\n"
 "\n"
