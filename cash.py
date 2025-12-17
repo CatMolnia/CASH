@@ -30,14 +30,14 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_info.sizePolicy().hasHeightForWidth())
         self.widget_info.setSizePolicy(sizePolicy)
         self.widget_info.setStyleSheet("QWidget {\n"
-"    background: #A3BFD9;  /* холодный металлик с голубым оттенком */\n"
+"    background: #BB8A81;\n"
 "\n"
 "    color: #1C1C1E;\n"
 "\n"
 "    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
 "    font-size: 13px;\n"
 "\n"
-"    border: 1px solid #8EA5B8;\n"
+"    border: none;\n"
 "    border-radius: 12px;\n"
 "}")
         self.widget_info.setObjectName("widget_info")
@@ -297,14 +297,14 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_days.sizePolicy().hasHeightForWidth())
         self.widget_days.setSizePolicy(sizePolicy)
         self.widget_days.setStyleSheet("QWidget {\n"
-"    background: #F1F2F3;\n"
+"    background: #A69286;\n"
 "\n"
 "    color: #1C1C1E;\n"
 "\n"
 "    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
 "    font-size: 13px;\n"
 "\n"
-"    border: 1px solid #D8D8DB;\n"
+"    border: none;\n"
 "    border-radius: 12px;\n"
 "}")
         self.widget_days.setObjectName("widget_days")
@@ -319,7 +319,6 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_days_zp.sizePolicy().hasHeightForWidth())
         self.widget_days_zp.setSizePolicy(sizePolicy)
         self.widget_days_zp.setStyleSheet("QWidget {\n"
-"    background: #FFFFFF;\n"
 "\n"
 "    color: #1C1C1E;\n"
 "\n"
@@ -345,7 +344,6 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_days_avans.sizePolicy().hasHeightForWidth())
         self.widget_days_avans.setSizePolicy(sizePolicy)
         self.widget_days_avans.setStyleSheet("QWidget {\n"
-"    background: #FFFFFF;\n"
 "\n"
 "    color: #1C1C1E;\n"
 "\n"
