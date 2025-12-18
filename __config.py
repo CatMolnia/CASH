@@ -41,7 +41,7 @@ class GeneralInformation:
 
     label_calendar = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -54,7 +54,7 @@ class GeneralInformation:
 
     label_work = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; " #CBD5E1
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -67,7 +67,7 @@ class GeneralInformation:
 
     label_weekend = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -81,7 +81,7 @@ class GeneralInformation:
     # конфиг для lineEdit
     lineEdit_calendar = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -94,7 +94,7 @@ class GeneralInformation:
 
     lineEdit_work = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -105,10 +105,9 @@ class GeneralInformation:
         "font-weight: 500;"
     )
 
-
     lineEdit_weekend = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -140,7 +139,7 @@ class SecondaryInformation:
 
     label_day_zp = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -153,7 +152,7 @@ class SecondaryInformation:
 
     label_day_avans = (
         "color: #4B5563; "
-        "background-color: #CBD5E1; "
+        "background-color: #F4F4F4; "
         "border-top: 2px solid #94A3B8; "
         "border-left: 2px solid #94A3B8; "
         "border-bottom: 2px solid #E2E8F0; "
@@ -231,7 +230,26 @@ class WidgetDaysZp:
     widget_days_zp = {
         "style": (
             "QWidget#widget_days_zp { "
-            "background-color: #F2F2F2; "
+            "background-color: #B8BFBC; "
+            "border: black; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 4,
+            "y_offset": 4,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }    
+
+class WidgetDaysAvans:
+    # конфиг для widget_days_avans
+    widget_days_avans = {
+        "style": (
+            "QWidget#widget_days_avans { "
+            "background-color: #B8BFBC; "
             "border: none; "
             "border-radius: 12px; "
             "margin: 0px 2px 6px 2px; "
@@ -245,21 +263,23 @@ class WidgetDaysZp:
         }
     }
 
-class WidgetDaysAvans:
-    # конфиг для widget_days_avans
-    widget_days_avans = {
-        "style": (
-            "QWidget#widget_days_avans { "
-            "background-color: #F2F2F2; "
-            "border: none; "
-            "border-radius: 12px; "
-            "margin: 0px 2px 6px 2px; "
-            "}"
-        ),
-        "shadow": {
-            "blur_radius": 15,
-            "x_offset": 4,
-            "y_offset": 4,
-            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
-        }
-    }
+class WidgetDaysZpAvans:
+    # конфиг для label_head_day
+    label_head_day = (
+        "color: #4B5563; "
+        "background-color: #F4F4F4; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 16px; "
+        "font-weight: 500;"
+    )
+
+    # конфиг для label_day (label_day_1 - label_day_31)
+    label_day = (
+        "color: #4B5563; "
+        "background-color: #F4F4F4; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 16px; "
+        "font-weight: 500;"
+    )

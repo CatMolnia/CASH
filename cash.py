@@ -30,7 +30,7 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_info.sizePolicy().hasHeightForWidth())
         self.widget_info.setSizePolicy(sizePolicy)
         self.widget_info.setStyleSheet("QWidget {\n"
-"    background: #91B2F2;\n"
+"    background: #BACBD9;\n"
 "\n"
 "    color: #1C1C1E;\n"
 "\n"
@@ -61,17 +61,29 @@ class Ui_CASH(object):
         self.gridLayout_2 = QtWidgets.QGridLayout()
         self.gridLayout_2.setVerticalSpacing(4)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label_title = QtWidgets.QLabel(parent=self.general_information)
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.label_work = QtWidgets.QLabel(parent=self.general_information)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_title.sizePolicy().hasHeightForWidth())
-        self.label_title.setSizePolicy(sizePolicy)
-        self.label_title.setAutoFillBackground(False)
-        self.label_title.setStyleSheet("")
-        self.label_title.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_title.setObjectName("label_title")
-        self.gridLayout_2.addWidget(self.label_title, 1, 0, 1, 1)
+        sizePolicy.setHeightForWidth(self.label_work.sizePolicy().hasHeightForWidth())
+        self.label_work.setSizePolicy(sizePolicy)
+        self.label_work.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_work.setObjectName("label_work")
+        self.horizontalLayout_4.addWidget(self.label_work)
+        self.lineEdit_work = QtWidgets.QLineEdit(parent=self.general_information)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.lineEdit_work.sizePolicy().hasHeightForWidth())
+        self.lineEdit_work.setSizePolicy(sizePolicy)
+        self.lineEdit_work.setMaximumSize(QtCore.QSize(25, 16777215))
+        self.lineEdit_work.setText("")
+        self.lineEdit_work.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.lineEdit_work.setObjectName("lineEdit_work")
+        self.horizontalLayout_4.addWidget(self.lineEdit_work)
+        self.gridLayout_2.addLayout(self.horizontalLayout_4, 3, 0, 1, 1)
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.label_calendar = QtWidgets.QLabel(parent=self.general_information)
@@ -118,29 +130,17 @@ class Ui_CASH(object):
         self.lineEdit_weekend.setObjectName("lineEdit_weekend")
         self.horizontalLayout_5.addWidget(self.lineEdit_weekend)
         self.gridLayout_2.addLayout(self.horizontalLayout_5, 4, 0, 1, 1)
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout()
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.label_work = QtWidgets.QLabel(parent=self.general_information)
+        self.label_title = QtWidgets.QLabel(parent=self.general_information)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.label_work.sizePolicy().hasHeightForWidth())
-        self.label_work.setSizePolicy(sizePolicy)
-        self.label_work.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
-        self.label_work.setObjectName("label_work")
-        self.horizontalLayout_4.addWidget(self.label_work)
-        self.lineEdit_work = QtWidgets.QLineEdit(parent=self.general_information)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.lineEdit_work.sizePolicy().hasHeightForWidth())
-        self.lineEdit_work.setSizePolicy(sizePolicy)
-        self.lineEdit_work.setMaximumSize(QtCore.QSize(25, 16777215))
-        self.lineEdit_work.setText("")
-        self.lineEdit_work.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.lineEdit_work.setObjectName("lineEdit_work")
-        self.horizontalLayout_4.addWidget(self.lineEdit_work)
-        self.gridLayout_2.addLayout(self.horizontalLayout_4, 3, 0, 1, 1)
+        sizePolicy.setHeightForWidth(self.label_title.sizePolicy().hasHeightForWidth())
+        self.label_title.setSizePolicy(sizePolicy)
+        self.label_title.setAutoFillBackground(False)
+        self.label_title.setStyleSheet("")
+        self.label_title.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.label_title.setObjectName("label_title")
+        self.gridLayout_2.addWidget(self.label_title, 1, 0, 1, 1)
         self.gridLayout_3.addLayout(self.gridLayout_2, 0, 0, 1, 1)
         spacerItem = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout_3.addItem(spacerItem, 1, 0, 1, 1)
@@ -297,14 +297,10 @@ class Ui_CASH(object):
         sizePolicy.setHeightForWidth(self.widget_days.sizePolicy().hasHeightForWidth())
         self.widget_days.setSizePolicy(sizePolicy)
         self.widget_days.setStyleSheet("QWidget {\n"
-"    background: #D8D3FE;\n"
-"\n"
+"    background: #585959;\n"
 "    color: #1C1C1E;\n"
-"\n"
 "    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
 "    font-size: 13px;\n"
-"\n"
-"    border: none;\n"
 "    border-radius: 12px;\n"
 "}")
         self.widget_days.setObjectName("widget_days")
@@ -318,13 +314,6 @@ class Ui_CASH(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget_days_zp.sizePolicy().hasHeightForWidth())
         self.widget_days_zp.setSizePolicy(sizePolicy)
-        self.widget_days_zp.setStyleSheet("QWidget {\n"
-"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
-"    font-size: 13px;\n"
-"\n"
-"    border: 1px solid #D8D8DB;\n"
-"    border-radius: 12px;\n"
-"}")
         self.widget_days_zp.setObjectName("widget_days_zp")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.widget_days_zp)
         self.verticalLayout_4.setObjectName("verticalLayout_4")
@@ -678,22 +667,17 @@ class Ui_CASH(object):
         self.day_15.addWidget(self.label_day_15)
         self.horizontalLayout.addLayout(self.day_15)
         self.verticalLayout_4.addLayout(self.horizontalLayout)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.verticalLayout_4.addItem(spacerItem2)
         self.verticalLayout_7.addWidget(self.widget_days_zp)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_7.addItem(spacerItem2)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_7.addItem(spacerItem3)
         self.widget_days_avans = QtWidgets.QWidget(parent=self.widget_days)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget_days_avans.sizePolicy().hasHeightForWidth())
         self.widget_days_avans.setSizePolicy(sizePolicy)
-        self.widget_days_avans.setStyleSheet("QWidget {\n"
-"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
-"    font-size: 13px;\n"
-"\n"
-"    border: 1px solid #D8D8DB;\n"
-"    border-radius: 12px;\n"
-"}")
         self.widget_days_avans.setObjectName("widget_days_avans")
         self.gridLayout_11 = QtWidgets.QGridLayout(self.widget_days_avans)
         self.gridLayout_11.setObjectName("gridLayout_11")
@@ -988,8 +972,12 @@ class Ui_CASH(object):
         self.day_31.addWidget(self.label_day_31)
         self.horizontalLayout_6.addLayout(self.day_31)
         self.gridLayout_11.addLayout(self.horizontalLayout_6, 0, 0, 1, 1)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_11.addItem(spacerItem4, 1, 0, 1, 1)
         self.verticalLayout_7.addWidget(self.widget_days_avans)
-        self.gridLayout_6.addLayout(self.verticalLayout_7, 0, 0, 1, 1)
+        self.gridLayout_6.addLayout(self.verticalLayout_7, 1, 0, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_6.addItem(spacerItem5, 0, 0, 1, 1)
         self.gridLayout_7.addWidget(self.widget_days, 2, 0, 1, 1)
 
         self.retranslateUi(CASH)
@@ -998,10 +986,10 @@ class Ui_CASH(object):
     def retranslateUi(self, CASH):
         _translate = QtCore.QCoreApplication.translate
         CASH.setWindowTitle(_translate("CASH", "CASH"))
-        self.label_title.setText(_translate("CASH", "Кол-во дней"))
+        self.label_work.setText(_translate("CASH", "рабочих"))
         self.label_calendar.setText(_translate("CASH", "календарных"))
         self.label_weekend.setText(_translate("CASH", "вых./праздн."))
-        self.label_work.setText(_translate("CASH", "рабочих"))
+        self.label_title.setText(_translate("CASH", "Кол-во дней"))
         self.label_day_zp.setText(_translate("CASH", "день ЗП:"))
         self.label_day_avans.setText(_translate("CASH", "день аванса:"))
         self.label_head_day_1.setText(_translate("CASH", "1"))

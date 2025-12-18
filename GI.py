@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
-from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans
+from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans
 import resources_rc
 
 class StartWindow:
@@ -10,13 +10,15 @@ class StartWindow:
                 general_information: GeneralInformation,
                 secondary_information: SecondaryInformation,
                 widget_days_zp: WidgetDaysZp,
-                widget_days_avans: WidgetDaysAvans):
+                widget_days_avans: WidgetDaysAvans,
+                widget_days_zp_avans: WidgetDaysZpAvans):
         
         self.config = config # конфиг из конфига
         self.general_information = general_information # конфиг из конфига
         self.secondary_information = secondary_information # конфиг из конфига
         self.widget_days_zp = widget_days_zp # конфиг из конфига
         self.widget_days_avans = widget_days_avans # конфиг из конфига
+        self.widget_days_zp_avans = widget_days_zp_avans # конфиг из конфига
 
     # применяем стили к окну
     def apply(self, widget: QWidget):
@@ -168,6 +170,15 @@ class StartWindow:
         shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
         shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
         widget.ui.widget_days_zp.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_zp
+        
+        # применяем стили к label_head_day и label_day (от 1 до 31)
+        for i in range(1, 32):
+            label_head = getattr(widget.ui, f"label_head_day_{i}", None)
+            label_day = getattr(widget.ui, f"label_day_{i}", None)
+            if label_head:
+                label_head.setStyleSheet(self.widget_days_zp_avans.label_head_day) # применяем стиль к label_head_day
+            if label_day:
+                label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # применяем стиль к label_day
 
         # _________________________________widget_days_avans_________________________________
         
@@ -183,3 +194,12 @@ class StartWindow:
         shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
         shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
         widget.ui.widget_days_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_avans
+        
+        # применяем стили к label_head_day и label_day (от 1 до 31)
+        for i in range(1, 32):
+            label_head = getattr(widget.ui, f"label_head_day_{i}", None)
+            label_day = getattr(widget.ui, f"label_day_{i}", None)
+            if label_head:
+                label_head.setStyleSheet(self.widget_days_zp_avans.label_head_day) # применяем стиль к label_head_day
+            if label_day:
+                label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # применяем стиль к label_day
