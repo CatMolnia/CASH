@@ -5,7 +5,7 @@ from typing import Dict, Tuple
 class AppWindowConfig:
     sizes: Dict[str, Tuple[int, int]] = field(
         default_factory=lambda: {
-            "default": (1500, 750)
+            "default": (1500, 680)
         }
     )
     
@@ -17,7 +17,7 @@ class GeneralInformation:
     general_information = {
         "style": (
             "QWidget#general_information { "
-            "background-color: #F2F2F2; "
+            "background-color: #FFFFFF; "
             "border: none; "
             "border-radius: 12px; "
             "margin: 0px 2px 6px 2px; "
@@ -33,7 +33,7 @@ class GeneralInformation:
     
     label_title = (
         "color: #4B5563; "
-        "background-color: #F2F2F2; "
+        "background-color: #FFFFFF; "
         "border: none; "
         "font-size: 32px; "
         "font-weight: 800;"
@@ -124,7 +124,7 @@ class SecondaryInformation:
     secondary_information = {
         "style": (
             "QWidget#secondary_information { "
-            "background-color: #F2F2F2; "
+            "background-color: #FFFFFF; "
             "border: none; "
             "border-radius: 12px; "
             "margin: 0px 2px 6px 2px; "
@@ -245,66 +245,6 @@ class WidgetDaysZp:
         }
     }
 
-    tableWidget_zp = (
-        "QTableWidget {"
-            "color: #4B5563;"
-            "background-color: #F2F2F2;"
-            #"border-top: 2px solid #94A3B8;"
-            #"border-left: 2px solid #94A3B8;"
-            #"border-bottom: 2px solid #E2E8F0;"
-            #"border-right: 2px solid #E2E8F0;"
-            "border-radius: 8px;"
-            "padding: 4px 4px;"
-            "font-size: 12px;"
-            "font-weight: 500;"
-            "gridline-color: transparent;"
-        "}"
-        
-        "QHeaderView {"
-            "background-color: #2A3132;"
-            "border-radius: 8px;"
-        "}"
-
-        "QHeaderView::section {"
-            "color: #F2F2F2;"
-            "background-color: #374151;" 
-            "font-weight: bold;"
-            "padding: 4px 4px;"
-            "border: none;"
-        "}"
-
-        "QHeaderView::section:first {"
-            "border-top-left-radius: 8px;"
-            "border-bottom-left-radius: 8px;"
-        "}"
-        
-        "QHeaderView::section:last {"
-            "border-top-right-radius: 8px;"
-            "border-bottom-right-radius: 8px;"
-        "}"
-        
-        "QTableWidget::item {"
-            "background-color: #BFA482;"
-            "border-top: 2px solid #A69286;"
-            "border-bottom: 2px solid #A69286;"
-            "border-left: none;"
-            "border-right: none;"
-            "border-radius: 0px;"
-        "}"
-        
-        "QTableWidget::item:first {"
-            "border-left: 2px solid #A69286;"
-            "border-top-left-radius: 8px;"
-            "border-bottom-left-radius: 8px;"
-        "}"
-
-        "QTableWidget::item:last {"
-            "border-right: 2px solid #A69286;"
-            "border-top-right-radius: 8px;"
-            "border-bottom-right-radius: 8px;"
-        "}"
-    )
-
 class WidgetDaysAvans:
     # конфиг для widget_days_avans
     widget_days_avans = {
@@ -323,63 +263,3 @@ class WidgetDaysAvans:
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }
-
-    tableWidget_avans = (
-        "QTableWidget {"
-            "color: #4B5563;"
-            "background-color: #F2F2F2;"
-            #"border-top: 2px solid #94A3B8;"
-            #"border-left: 2px solid #94A3B8;"
-            #"border-bottom: 2px solid #E2E8F0;"
-            #"border-right: 2px solid #E2E8F0;"
-            "border-radius: 8px;"
-            "padding: 4px 4px;"
-            "font-size: 12px;"
-            "font-weight: 500;"
-            "gridline-color: transparent;"
-        "}"
-        
-        "QHeaderView {"
-            "background-color: #2A3132;"
-            "border-radius: 8px;"
-        "}"
-
-        "QHeaderView::section {"
-            "color: #F2F2F2;"
-            "background-color: #374151;" 
-            "font-weight: bold;"
-            "padding: 4px 4px;"
-            "border: none;"
-        "}"
-
-        "QHeaderView::section:first {"
-            "border-top-left-radius: 8px;"
-            "border-bottom-left-radius: 8px;"
-        "}"
-        
-        "QHeaderView::section:last {"
-            "border-top-right-radius: 8px;"
-            "border-bottom-right-radius: 8px;"
-        "}"
-        
-        "QTableWidget::item {"
-            "background-color: #BFA482;"
-            "border-top: 2px solid #A69286;"
-            "border-bottom: 2px solid #A69286;"
-            "border-left: none;"
-            "border-right: none;"
-            "border-radius: 0px;"
-        "}"
-        
-        "QTableWidget::item:first {"
-            "border-left: 2px solid #A69286;"
-            "border-top-left-radius: 8px;"
-            "border-bottom-left-radius: 8px;"
-        "}"
-
-        "QTableWidget::item:last {"
-            "border-right: 2px solid #A69286;"
-            "border-top-right-radius: 8px;"
-            "border-bottom-right-radius: 8px;"
-        "}"
-    )
