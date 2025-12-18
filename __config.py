@@ -267,6 +267,7 @@ class WidgetDaysZpAvans:
     # конфиг для label_head_day
     label_head_day = (
         "color: #4B5563; "
+        "border: 1px solid #585959; "
         "background-color: #F4F4F4; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
@@ -277,6 +278,7 @@ class WidgetDaysZpAvans:
     # конфиг для label_day (label_day_1 - label_day_31)
     label_day = (
         "color: #4B5563; "
+        "border: 1px solid #585959; "
         "background-color: #F4F4F4; "
         "border-radius: 8px; "
         "padding: 4px 4px; "
