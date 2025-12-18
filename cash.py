@@ -31,13 +31,10 @@ class Ui_CASH(object):
         self.widget_info.setSizePolicy(sizePolicy)
         self.widget_info.setStyleSheet("QWidget {\n"
 "    background: #BACBD9;\n"
-"\n"
 "    color: #1C1C1E;\n"
-"\n"
+"    border: none;\n"
 "    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
 "    font-size: 13px;\n"
-"\n"
-"    border: none;\n"
 "    border-radius: 12px;\n"
 "}")
         self.widget_info.setObjectName("widget_info")
@@ -299,6 +296,7 @@ class Ui_CASH(object):
         self.widget_days.setStyleSheet("QWidget {\n"
 "    background: #585959;\n"
 "    color: #1C1C1E;\n"
+"    border: none;\n"
 "    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
 "    font-size: 13px;\n"
 "    border-radius: 12px;\n"

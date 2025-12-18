@@ -25,8 +25,8 @@ class GeneralInformation:
         ),
         "shadow": {
             "blur_radius": 15,
-            "x_offset": 4,
-            "y_offset": 4,
+            "x_offset": 6,
+            "y_offset": 6,
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }
@@ -131,8 +131,8 @@ class SecondaryInformation:
         ),
         "shadow": {
             "blur_radius": 15,
-            "x_offset": 4,
-            "y_offset": 4,
+            "x_offset": 6,
+            "y_offset": 6,
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }
@@ -238,8 +238,8 @@ class WidgetDaysZp:
         ),
         "shadow": {
             "blur_radius": 15,
-            "x_offset": 4,
-            "y_offset": 4,
+            "x_offset": 6,
+            "y_offset": 6,
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }    
@@ -256,9 +256,9 @@ class WidgetDaysAvans:
             "}"
         ),
         "shadow": {
-            "blur_radius": 15,
-            "x_offset": 4,
-            "y_offset": 4,
+            "blur_radius": 15, 
+            "x_offset": 6,
+            "y_offset": 6,
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }

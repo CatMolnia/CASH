@@ -36,13 +36,10 @@
      <property name="styleSheet">
       <string notr="true">QWidget {
     background: #BACBD9;
-
     color: #1C1C1E;
-
+    border: none;
     font-family: &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;;
     font-size: 13px;
-
-    border: none;
     border-radius: 12px;
 }</string>
      </property>
@@ -454,6 +451,7 @@
       <string notr="true">QWidget {
     background: #585959;
     color: #1C1C1E;
+    border: none;
     font-family: &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;;
     font-size: 13px;
     border-radius: 12px;
