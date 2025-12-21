@@ -337,19 +337,6 @@
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-    background: #FFFFFF;
-
-    color: #1C1C1E;
-
-    font-family: &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;;
-    font-size: 13px;
-
-    border: 1px solid #D8D8DB;
-    border-radius: 12px;
-}</string>
-          </property>
           <layout class="QVBoxLayout" name="verticalLayout">
            <item>
             <widget class="QTableWidget" name="tableWidget_calendar">
@@ -365,29 +352,26 @@
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="widget_calendar_2" native="true">
+         <widget class="QWidget" name="widget_table_zp" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-    background: #FFFFFF;
-
-    color: #1C1C1E;
-
-    font-family: &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;;
-    font-size: 13px;
-
-    border: 1px solid #D8D8DB;
-    border-radius: 12px;
-}</string>
-          </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
            <item>
-            <widget class="QTableWidget" name="tableWidget_calendar_2">
+            <widget class="QLabel" name="label_zp">
+             <property name="text">
+              <string>Зарплата</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_zp">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -396,33 +380,43 @@
              </property>
             </widget>
            </item>
+           <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>5</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
           </layout>
          </widget>
         </item>
         <item>
-         <widget class="QWidget" name="widget_calendar_3" native="true">
+         <widget class="QWidget" name="widget_table_avans" native="true">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
-          <property name="styleSheet">
-           <string notr="true">QWidget {
-    background: #FFFFFF;
-
-    color: #1C1C1E;
-
-    font-family: &quot;SF Pro Text&quot;, &quot;Helvetica Neue&quot;, &quot;Helvetica&quot;, &quot;Arial&quot;;
-    font-size: 13px;
-
-    border: 1px solid #D8D8DB;
-    border-radius: 12px;
-}</string>
-          </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
-            <widget class="QTableWidget" name="tableWidget_calendar_4">
+            <widget class="QLabel" name="label_avans">
+             <property name="text">
+              <string>Аванс</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QTableWidget" name="tableWidget_avans">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -430,6 +424,19 @@
               </sizepolicy>
              </property>
             </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>5</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </widget>
@@ -1178,19 +1185,6 @@
            </item>
           </layout>
          </widget>
-        </item>
-        <item>
-         <spacer name="verticalSpacer">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>5</height>
-           </size>
-          </property>
-         </spacer>
         </item>
         <item>
          <widget class="QWidget" name="widget_days_avans" native="true">

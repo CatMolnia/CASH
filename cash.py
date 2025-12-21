@@ -198,17 +198,6 @@ class Ui_CASH(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.widget_calendar.sizePolicy().hasHeightForWidth())
         self.widget_calendar.setSizePolicy(sizePolicy)
-        self.widget_calendar.setStyleSheet("QWidget {\n"
-"    background: #FFFFFF;\n"
-"\n"
-"    color: #1C1C1E;\n"
-"\n"
-"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
-"    font-size: 13px;\n"
-"\n"
-"    border: 1px solid #D8D8DB;\n"
-"    border-radius: 12px;\n"
-"}")
         self.widget_calendar.setObjectName("widget_calendar")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.widget_calendar)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -223,68 +212,58 @@ class Ui_CASH(object):
         self.tableWidget_calendar.setRowCount(0)
         self.verticalLayout.addWidget(self.tableWidget_calendar)
         self.horizontalLayout_2.addWidget(self.widget_calendar)
-        self.widget_calendar_2 = QtWidgets.QWidget(parent=self.widget_info)
+        self.widget_table_zp = QtWidgets.QWidget(parent=self.widget_info)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.widget_calendar_2.sizePolicy().hasHeightForWidth())
-        self.widget_calendar_2.setSizePolicy(sizePolicy)
-        self.widget_calendar_2.setStyleSheet("QWidget {\n"
-"    background: #FFFFFF;\n"
-"\n"
-"    color: #1C1C1E;\n"
-"\n"
-"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
-"    font-size: 13px;\n"
-"\n"
-"    border: 1px solid #D8D8DB;\n"
-"    border-radius: 12px;\n"
-"}")
-        self.widget_calendar_2.setObjectName("widget_calendar_2")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.widget_calendar_2)
+        sizePolicy.setHeightForWidth(self.widget_table_zp.sizePolicy().hasHeightForWidth())
+        self.widget_table_zp.setSizePolicy(sizePolicy)
+        self.widget_table_zp.setObjectName("widget_table_zp")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.widget_table_zp)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.tableWidget_calendar_2 = QtWidgets.QTableWidget(parent=self.widget_calendar_2)
+        self.label_zp = QtWidgets.QLabel(parent=self.widget_table_zp)
+        self.label_zp.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_zp.setObjectName("label_zp")
+        self.verticalLayout_3.addWidget(self.label_zp)
+        self.tableWidget_zp = QtWidgets.QTableWidget(parent=self.widget_table_zp)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.tableWidget_calendar_2.sizePolicy().hasHeightForWidth())
-        self.tableWidget_calendar_2.setSizePolicy(sizePolicy)
-        self.tableWidget_calendar_2.setObjectName("tableWidget_calendar_2")
-        self.tableWidget_calendar_2.setColumnCount(0)
-        self.tableWidget_calendar_2.setRowCount(0)
-        self.verticalLayout_3.addWidget(self.tableWidget_calendar_2)
-        self.horizontalLayout_2.addWidget(self.widget_calendar_2)
-        self.widget_calendar_3 = QtWidgets.QWidget(parent=self.widget_info)
+        sizePolicy.setHeightForWidth(self.tableWidget_zp.sizePolicy().hasHeightForWidth())
+        self.tableWidget_zp.setSizePolicy(sizePolicy)
+        self.tableWidget_zp.setObjectName("tableWidget_zp")
+        self.tableWidget_zp.setColumnCount(0)
+        self.tableWidget_zp.setRowCount(0)
+        self.verticalLayout_3.addWidget(self.tableWidget_zp)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.verticalLayout_3.addItem(spacerItem2)
+        self.horizontalLayout_2.addWidget(self.widget_table_zp)
+        self.widget_table_avans = QtWidgets.QWidget(parent=self.widget_info)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.widget_calendar_3.sizePolicy().hasHeightForWidth())
-        self.widget_calendar_3.setSizePolicy(sizePolicy)
-        self.widget_calendar_3.setStyleSheet("QWidget {\n"
-"    background: #FFFFFF;\n"
-"\n"
-"    color: #1C1C1E;\n"
-"\n"
-"    font-family: \"SF Pro Text\", \"Helvetica Neue\", \"Helvetica\", \"Arial\";\n"
-"    font-size: 13px;\n"
-"\n"
-"    border: 1px solid #D8D8DB;\n"
-"    border-radius: 12px;\n"
-"}")
-        self.widget_calendar_3.setObjectName("widget_calendar_3")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.widget_calendar_3)
+        sizePolicy.setHeightForWidth(self.widget_table_avans.sizePolicy().hasHeightForWidth())
+        self.widget_table_avans.setSizePolicy(sizePolicy)
+        self.widget_table_avans.setObjectName("widget_table_avans")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.widget_table_avans)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.tableWidget_calendar_4 = QtWidgets.QTableWidget(parent=self.widget_calendar_3)
+        self.label_avans = QtWidgets.QLabel(parent=self.widget_table_avans)
+        self.label_avans.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_avans.setObjectName("label_avans")
+        self.verticalLayout_5.addWidget(self.label_avans)
+        self.tableWidget_avans = QtWidgets.QTableWidget(parent=self.widget_table_avans)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.tableWidget_calendar_4.sizePolicy().hasHeightForWidth())
-        self.tableWidget_calendar_4.setSizePolicy(sizePolicy)
-        self.tableWidget_calendar_4.setObjectName("tableWidget_calendar_4")
-        self.tableWidget_calendar_4.setColumnCount(0)
-        self.tableWidget_calendar_4.setRowCount(0)
-        self.verticalLayout_5.addWidget(self.tableWidget_calendar_4)
-        self.horizontalLayout_2.addWidget(self.widget_calendar_3)
+        sizePolicy.setHeightForWidth(self.tableWidget_avans.sizePolicy().hasHeightForWidth())
+        self.tableWidget_avans.setSizePolicy(sizePolicy)
+        self.tableWidget_avans.setObjectName("tableWidget_avans")
+        self.tableWidget_avans.setColumnCount(0)
+        self.tableWidget_avans.setRowCount(0)
+        self.verticalLayout_5.addWidget(self.tableWidget_avans)
+        spacerItem3 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.verticalLayout_5.addItem(spacerItem3)
+        self.horizontalLayout_2.addWidget(self.widget_table_avans)
         self.gridLayout.addLayout(self.horizontalLayout_2, 0, 0, 1, 1)
         self.gridLayout_7.addWidget(self.widget_info, 0, 0, 1, 1)
         self.widget_days = QtWidgets.QWidget(parent=CASH)
@@ -665,11 +644,9 @@ class Ui_CASH(object):
         self.day_15.addWidget(self.label_day_15)
         self.horizontalLayout.addLayout(self.day_15)
         self.verticalLayout_4.addLayout(self.horizontalLayout)
-        spacerItem2 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.verticalLayout_4.addItem(spacerItem2)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.verticalLayout_4.addItem(spacerItem4)
         self.verticalLayout_7.addWidget(self.widget_days_zp)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 5, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_7.addItem(spacerItem3)
         self.widget_days_avans = QtWidgets.QWidget(parent=self.widget_days)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(0)
@@ -970,12 +947,12 @@ class Ui_CASH(object):
         self.day_31.addWidget(self.label_day_31)
         self.horizontalLayout_6.addLayout(self.day_31)
         self.gridLayout_11.addLayout(self.horizontalLayout_6, 0, 0, 1, 1)
-        spacerItem4 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.gridLayout_11.addItem(spacerItem4, 1, 0, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_11.addItem(spacerItem5, 1, 0, 1, 1)
         self.verticalLayout_7.addWidget(self.widget_days_avans)
         self.gridLayout_6.addLayout(self.verticalLayout_7, 1, 0, 1, 1)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.gridLayout_6.addItem(spacerItem5, 0, 0, 1, 1)
+        spacerItem6 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_6.addItem(spacerItem6, 0, 0, 1, 1)
         self.gridLayout_7.addWidget(self.widget_days, 2, 0, 1, 1)
 
         self.retranslateUi(CASH)
@@ -990,6 +967,8 @@ class Ui_CASH(object):
         self.label_title.setText(_translate("CASH", "Кол-во дней"))
         self.label_day_zp.setText(_translate("CASH", "день ЗП:"))
         self.label_day_avans.setText(_translate("CASH", "день аванса:"))
+        self.label_zp.setText(_translate("CASH", "Зарплата"))
+        self.label_avans.setText(_translate("CASH", "Аванс"))
         self.label_head_day_1.setText(_translate("CASH", "1"))
         self.label_head_day_2.setText(_translate("CASH", "2"))
         self.label_head_day_3.setText(_translate("CASH", "3"))

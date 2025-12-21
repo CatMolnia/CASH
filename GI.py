@@ -1,7 +1,7 @@
-from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
-from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans
+from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans, WidgetTableZP, WidgetTableAvans, WodgetCalendar
 import resources_rc
 
 class StartWindow:
@@ -11,7 +11,10 @@ class StartWindow:
                 secondary_information: SecondaryInformation,
                 widget_days_zp: WidgetDaysZp,
                 widget_days_avans: WidgetDaysAvans,
-                widget_days_zp_avans: WidgetDaysZpAvans):
+                widget_days_zp_avans: WidgetDaysZpAvans,
+                widget_table_zp: WidgetTableZP,
+                widget_table_avans: WidgetTableAvans,
+                widget_calendar: WodgetCalendar):
         
         self.config = config # конфиг из конфига
         self.general_information = general_information # конфиг из конфига
@@ -19,6 +22,9 @@ class StartWindow:
         self.widget_days_zp = widget_days_zp # конфиг из конфига
         self.widget_days_avans = widget_days_avans # конфиг из конфига
         self.widget_days_zp_avans = widget_days_zp_avans # конфиг из конфига
+        self.widget_table_zp = widget_table_zp # конфиг из конфига
+        self.widget_table_avans = widget_table_avans # конфиг из конфига
+        self.widget_calendar = widget_calendar # конфиг из конфига
 
     # применяем стили к окну
     def apply(self, widget: QWidget):
@@ -203,3 +209,54 @@ class StartWindow:
                 label_head.setStyleSheet(self.widget_days_zp_avans.label_head_day) # применяем стиль к label_head_day
             if label_day:
                 label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # применяем стиль к label_day
+
+        # _________________________________widget_table_zp_________________________________
+
+        # виджет general_information - применяем стили и эффект тени
+        tdz_config = self.widget_table_zp.widget_table_zp # конфиг из конфига
+        widget.ui.widget_table_zp.setStyleSheet(tdz_config["style"]) # применяем стиль к виджету general_information
+        
+        # добавляем эффект размытой тени (параметры из конфига)
+        shadow_params = tdz_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.widget_table_zp.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету general_information
+
+        widget.ui.label_zp.setStyleSheet(self.widget_table_zp.label_zp) # применяем стиль к label_title
+        widget.ui.tableWidget_zp.setStyleSheet(self.widget_table_zp.tableWidget_zp) # применяем стиль к label_title
+
+        # _________________________________widget_table_avans__________________________________
+
+        # виджет general_information - применяем стили и эффект тени
+        tda_config = self.widget_table_avans.widget_table_avans # конфиг из конфига
+        widget.ui.widget_table_avans.setStyleSheet(tda_config["style"]) # применяем стиль к виджету general_information
+        
+        # добавляем эффект размытой тени (параметры из конфига)
+        shadow_params = tda_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.widget_table_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету general_information
+
+        widget.ui.label_avans.setStyleSheet(self.widget_table_avans.label_avans) # применяем стиль к label_title
+        widget.ui.tableWidget_avans.setStyleSheet(self.widget_table_avans.tableWidget_avans) # применяем стиль к label_title
+
+         # _________________________________widget_calendar___________________________________
+
+        # виджет general_information - применяем стили и эффект тени
+        wc_config = self.widget_calendar.widget_calendar # конфиг из конфига
+        widget.ui.widget_calendar.setStyleSheet(wc_config["style"]) # применяем стиль к виджету general_information
+        
+        # добавляем эффект размытой тени (параметры из конфига)
+        shadow_params = wc_config["shadow"] # параметры из конфига
+        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        widget.ui.widget_calendar.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету general_information

@@ -5,7 +5,7 @@ from typing import Dict, Tuple
 class AppWindowConfig:
     sizes: Dict[str, Tuple[int, int]] = field(
         default_factory=lambda: {
-            "default": (1500, 680)
+            "default": (1500, 660)
         }
     )
     
@@ -285,3 +285,111 @@ class WidgetDaysZpAvans:
         "font-size: 16px; "
         "font-weight: 500;"
     )
+
+class WidgetTableZP:
+    widget_table_zp = {
+        "style": (
+            "QWidget#widget_table_zp { "
+            "background-color: #FFFFFF; "
+            "border: none; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 6,
+            "y_offset": 6,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }
+
+    label_zp = (
+        "color:  #4B5563; "
+        "background-color: #CFB1BD; "
+        "border-top: 2px solid #8B9491;"
+        "border-left: 2px solid #8B9491;"
+        "border-bottom: 2px solid #E6EBE9;"
+        "border-right: 2px solid #E6EBE9;"
+        "border-radius: 8px;"
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 14px; "
+        "font-weight: 800;"
+    )
+
+    tableWidget_zp = (
+        "color: #1F2933;"
+        "background-color: #F0D7D3;"
+        "border-top: 2px solid #8B9491;"
+        "border-left: 2px solid #8B9491;"
+        "border-bottom: 2px solid #E6EBE9;"
+        "border-right: 2px solid #E6EBE9;"
+        "border-radius: 8px;"
+        "padding: 4px;"
+        "font-size: 12px;"
+        "font-weight: 500;"
+    )
+
+class WidgetTableAvans:
+    widget_table_avans = {
+        "style": (
+            "QWidget#widget_table_avans { "
+            "background-color: #FFFFFF; "
+            "border: none; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 6,
+            "y_offset": 6,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }
+
+    label_avans = (
+        "color:  #4B5563; "
+        "background-color: #CFB1BD; "
+        "border-top: 2px solid #8B9491;"
+        "border-left: 2px solid #8B9491;"
+        "border-bottom: 2px solid #E6EBE9;"
+        "border-right: 2px solid #E6EBE9;"
+        "border-radius: 8px;"
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 14px; "
+        "font-weight: 800;"
+    )
+
+    tableWidget_avans = (
+        "color: #1F2933;"
+        "background-color: #F0D7D3;"
+        "border-top: 2px solid #8B9491;"
+        "border-left: 2px solid #8B9491;"
+        "border-bottom: 2px solid #E6EBE9;"
+        "border-right: 2px solid #E6EBE9;"
+        "border-radius: 8px;"
+        "padding: 4px;"
+        "font-size: 12px;"
+        "font-weight: 500;"
+    )
+
+class WodgetCalendar:
+    widget_calendar = {
+        "style": (
+            "QWidget#widget_calendar { "
+            "background-color: #FFFFFF; "
+            "border: none; "
+            "border-radius: 12px; "
+            "margin: 0px 2px 6px 2px; "
+            "}"
+        ),
+        "shadow": {
+            "blur_radius": 15,
+            "x_offset": 6,
+            "y_offset": 6,
+            "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
+        }
+    }
