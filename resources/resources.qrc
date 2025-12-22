@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/icons">
         <file>icons/calendar.png</file>
+        <file>icons/calendar_int.png</file>
         <file>icons/weekend.png</file>
         <file>icons/work.png</file>
         <file>icons/zp.png</file>

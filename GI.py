@@ -1,7 +1,7 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap
-from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans, WidgetTableZP, WidgetTableAvans, WodgetCalendar
+from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans, WidgetTableZP, WidgetTableAvans, WidgetCalendar
 import resources_rc
 
 class StartWindow:
@@ -14,7 +14,7 @@ class StartWindow:
                 widget_days_zp_avans: WidgetDaysZpAvans,
                 widget_table_zp: WidgetTableZP,
                 widget_table_avans: WidgetTableAvans,
-                widget_calendar: WodgetCalendar):
+                widget_calendar: WidgetCalendar):
         
         self.config = config # конфиг из конфига
         self.general_information = general_information # конфиг из конфига
@@ -246,7 +246,7 @@ class StartWindow:
         widget.ui.label_avans.setStyleSheet(self.widget_table_avans.label_avans) # применяем стиль к label_title
         widget.ui.tableWidget_avans.setStyleSheet(self.widget_table_avans.tableWidget_avans) # применяем стиль к label_title
 
-         # _________________________________widget_calendar___________________________________
+        # _________________________________calendar___________________________________
 
         # виджет general_information - применяем стили и эффект тени
         wc_config = self.widget_calendar.widget_calendar # конфиг из конфига
@@ -260,3 +260,26 @@ class StartWindow:
         shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
         shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
         widget.ui.widget_calendar.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету general_information
+
+        # настройка иконки календаря
+        calendar_int_icon_path = ":/icons/icons/calendar_int.png"
+        calendar_int_icon = QPixmap(calendar_int_icon_path)
+
+        if not calendar_int_icon.isNull():
+            widget.ui.label_calendar_icon.setPixmap(calendar_int_icon)
+            widget.ui.label_calendar_icon.setFixedSize(50, 50)
+            widget.ui.label_calendar_icon.setScaledContents(True)  # Это ключевая строка
+
+        widget.ui.label_calendar_icon.setStyleSheet(self.widget_calendar.label_calendar_icon)
+        # настройка label_calendar_day
+        widget.ui.label_calendar_day.setStyleSheet(self.widget_calendar.label_calendar_day)
+        widget.ui.label_calendar_day.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
+        widget.ui.label_calendar_day.setContentsMargins(0, 0, 0, 0) # убираем внутренние отступы
+        widget.ui.label_calendar_day.setIndent(0) # убираем отступ текста
+        # настройка label_calendar_month
+        widget.ui.label_calendar_month.setStyleSheet(self.widget_calendar.label_calendar_month)
+        widget.ui.label_calendar_month.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
+        widget.ui.label_calendar_month.setContentsMargins(0, 0, 0, 0) # убираем внутренние отступы
+        widget.ui.label_calendar_month.setIndent(0) # убираем отступ текста
+        # настройка progress
+        widget.ui.progressBar_calendar.setStyleSheet(self.widget_calendar.progressBar_calendar)

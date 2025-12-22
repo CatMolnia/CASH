@@ -305,8 +305,8 @@ class WidgetTableZP:
     }
 
     label_zp = (
-        "color:  #4B5563; "
-        "background-color: #CFB1BD; "
+        "color:  #F4F4F4; "
+        "background-color: #50526A; "
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -320,7 +320,7 @@ class WidgetTableZP:
 
     tableWidget_zp = (
         "color: #1F2933;"
-        "background-color: #F0D7D3;"
+        "background-color: #D9D6DF;"
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -350,8 +350,8 @@ class WidgetTableAvans:
     }
 
     label_avans = (
-        "color:  #4B5563; "
-        "background-color: #CFB1BD; "
+        "color:  #F4F4F4; "
+        "background-color: #50526A; "
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -365,7 +365,7 @@ class WidgetTableAvans:
 
     tableWidget_avans = (
         "color: #1F2933;"
-        "background-color: #F0D7D3;"
+        "background-color: #D9D6DF;"
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -376,7 +376,7 @@ class WidgetTableAvans:
         "font-weight: 500;"
     )
 
-class WodgetCalendar:
+class WidgetCalendar:
     widget_calendar = {
         "style": (
             "QWidget#widget_calendar { "
@@ -393,3 +393,52 @@ class WodgetCalendar:
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
     }
+
+    label_calendar_icon = (
+        "background-color: #FFFFFF; "
+    )
+
+    label_calendar_day = (
+        "color: #4B5563; "
+        "background-color: #FFFFFF; "
+        "border-radius: 8px; "
+        "padding-left: 0px; "
+        "padding-right: 0px; "
+        "padding-top: 0px; "
+        "padding-bottom: 0px; "
+        "margin-left: 0px; "
+        "font-size: 32px; "
+        "font-weight: 800; "
+        "text-align: left;"
+    )
+
+    label_calendar_month = (
+        "color: #4B5563; "
+        "background-color: #FFFFFF; "
+        "border-radius: 8px; "
+        "padding-left: 0px; "
+        "padding-right: 0px; "
+        "padding-top: 0px; "
+        "padding-bottom: 0px; "
+        "margin-left: 0px; "
+        "font-size: 16px; "
+        "font-weight: 400; "
+        "text-align: left;"
+    )
+
+    progressBar_calendar = (
+        "QProgressBar {"
+        "  background-color: rgba(0, 0, 0, 0.07);"
+        "  border: none;"
+        "  border-radius: 3px;"
+        "  min-height: 6px;"
+        "  max-height: 6px;"
+        "}"
+        "QProgressBar::chunk {"
+        "  background-color: qlineargradient("
+        "    x1:0, y1:0, x2:0, y2:1, "
+        "    stop:0 #FF8A8A, stop:1 #FF3B30"
+        "  );"
+        "  border-radius: 3px;"
+        "}"
+    )
