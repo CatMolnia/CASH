@@ -481,3 +481,22 @@ class WidgetCalendar:
         "color: #4B5563; "
         "background-color: #FFFFFF; "
     )
+
+    tableWidget_calendar = """
+        QTableWidget {
+            background: #FFFFFF;
+        }
+        QHeaderView::section {
+            background: transparent;
+            border: none;
+            font-weight: 500;
+        }
+        QTableWidget::item {
+            padding: 6px;
+            border-radius: 6px;
+        }
+        QTableWidget::item:selected {
+            background: #ff5a5a;
+            color: red;
+        }
+        """

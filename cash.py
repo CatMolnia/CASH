@@ -986,7 +986,7 @@ class Ui_CASH(object):
         self.pushButton_next.setObjectName("pushButton_next")
         self.horizontalLayout_8.addWidget(self.pushButton_next)
         self.verticalLayout_6.addLayout(self.horizontalLayout_8)
-        spacerItem8 = QtWidgets.QSpacerItem(40, 5, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem8 = QtWidgets.QSpacerItem(40, 10, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
         self.verticalLayout_6.addItem(spacerItem8)
         self.tableWidget_calendar = QtWidgets.QTableWidget(parent=self.widget_calendar)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
