@@ -442,3 +442,42 @@ class WidgetCalendar:
         "  border-radius: 3px;"
         "}"
     )
+
+    pushButton_last = """
+        QPushButton {
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            padding: 0px 20px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        QPushButton:hover {
+            background-color: #F0F0F0;
+        }
+        QPushButton:pressed {
+            background-color: #D9D9D9;
+        }
+        """
+
+    pushButton_next = """
+        QPushButton {
+            background-color: #FFFFFF;
+            border: none;
+            border-radius: 8px; 
+            padding: 0px 20px;  /* отступы внутри кнопки */
+            font-size: 16px;  /* размер текста */
+            font-weight: 500;  /* вес текста */
+        }
+        QPushButton:hover {
+            background-color: #F0F0F0;
+        }
+        QPushButton:pressed {
+            background-color: #D9D9D9;
+        }
+        """
+
+    label_month = (
+        "color: #4B5563; "
+        "background-color: #FFFFFF; "
+    )

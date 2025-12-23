@@ -1,7 +1,9 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
 from PyQt6.QtCore import Qt, QSize
-from PyQt6.QtGui import QColor, QPixmap
-from __config import AppWindowConfig, GeneralInformation, SecondaryInformation, WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans, WidgetTableZP, WidgetTableAvans, WidgetCalendar
+from PyQt6.QtGui import QColor, QPixmap, QIcon
+from __config import (AppWindowConfig, GeneralInformation, SecondaryInformation,
+                      WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans,
+                      WidgetTableZP, WidgetTableAvans, WidgetCalendar)
 import resources_rc
 
 class StartWindow:
@@ -271,15 +273,40 @@ class StartWindow:
             widget.ui.label_calendar_icon.setScaledContents(True)  # Это ключевая строка
 
         widget.ui.label_calendar_icon.setStyleSheet(self.widget_calendar.label_calendar_icon)
+        
         # настройка label_calendar_day
         widget.ui.label_calendar_day.setStyleSheet(self.widget_calendar.label_calendar_day)
         widget.ui.label_calendar_day.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
         widget.ui.label_calendar_day.setContentsMargins(0, 0, 0, 0) # убираем внутренние отступы
         widget.ui.label_calendar_day.setIndent(0) # убираем отступ текста
+        
         # настройка label_calendar_month
         widget.ui.label_calendar_month.setStyleSheet(self.widget_calendar.label_calendar_month)
         widget.ui.label_calendar_month.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
         widget.ui.label_calendar_month.setContentsMargins(0, 0, 0, 0) # убираем внутренние отступы
         widget.ui.label_calendar_month.setIndent(0) # убираем отступ текста
+        
         # настройка progress
         widget.ui.progressBar_calendar.setStyleSheet(self.widget_calendar.progressBar_calendar)
+
+        # настройка клавиш "вперед", "назад"
+        # добавляем иконки
+        last_path = ":/icons/icons/last.png"
+        next_path = ":/icons/icons/next.png"
+        
+        # добавляем иконки в QPixmap
+        last_icon = QPixmap(last_path)
+        next_icon = QPixmap(next_path)
+        
+        # если иконки не пустые, добавляем их на кнопки
+        if not last_icon.isNull() and not next_icon.isNull():
+            widget.ui.pushButton_last.setIcon(QIcon(last_icon))
+            widget.ui.pushButton_next.setIcon(QIcon(next_icon))
+            widget.ui.pushButton_last.setIconSize(QSize(18, 18))
+            widget.ui.pushButton_next.setIconSize(QSize(18, 18))
+
+        widget.ui.pushButton_last.setStyleSheet(self.widget_calendar.pushButton_last)
+        widget.ui.pushButton_next.setStyleSheet(self.widget_calendar.pushButton_next)
+
+        # настройка label_month
+        widget.ui.label_month.setStyleSheet(self.widget_calendar.label_month)

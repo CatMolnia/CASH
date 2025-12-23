@@ -1819,7 +1819,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>November</string>
+                    <string>Ноября</string>
                    </property>
                   </widget>
                  </item>
@@ -1923,7 +1923,7 @@
                 <number>0</number>
                </property>
                <property name="value">
-                <number>77</number>
+                <number>63</number>
                </property>
                <property name="format">
                 <string/>
@@ -1949,7 +1949,7 @@
              <item>
               <layout class="QHBoxLayout" name="horizontalLayout_8">
                <item>
-                <widget class="QPushButton" name="pushButton">
+                <widget class="QPushButton" name="pushButton_last">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -1957,12 +1957,12 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>назад</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="label_month">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -1970,7 +1970,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>месяц</string>
+                  <string>ноябрь</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>
@@ -1978,7 +1978,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QPushButton" name="pushButton_2">
+                <widget class="QPushButton" name="pushButton_next">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                    <horstretch>0</horstretch>
@@ -1986,7 +1986,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>вперед</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
