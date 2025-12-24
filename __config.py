@@ -426,6 +426,19 @@ class WidgetCalendar:
         "text-align: left;"
     )
 
+    label_calendar_year = (
+        "color: #4B5563; "
+        "background-color: #FFFFFF; "
+        "border-radius: 6px; "
+        "padding-left: 0px; "
+        "padding-right: 0px; "
+        "padding-top: 0px; "
+        "padding-bottom: 0px; "
+        "margin-left: 0px; "
+        "font-size: 12px; " 
+        "font-weight: 300; "
+    )
+
     progressBar_calendar = (
         "QProgressBar {"
         "  background-color: rgba(0, 0, 0, 0.07);"

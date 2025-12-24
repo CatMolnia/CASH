@@ -1754,13 +1754,10 @@
             <height>0</height>
            </size>
           </property>
-          <layout class="QGridLayout" name="gridLayout_8">
-           <item row="0" column="0">
-            <layout class="QVBoxLayout" name="verticalLayout_6">
+          <layout class="QVBoxLayout" name="verticalLayout_9">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_8">
              <property name="spacing">
-              <number>0</number>
-             </property>
-             <property name="leftMargin">
               <number>0</number>
              </property>
              <item>
@@ -1806,7 +1803,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>19</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -1836,7 +1833,7 @@
                  <property name="sizeHint" stdset="0">
                   <size>
                    <width>40</width>
-                   <height>5</height>
+                   <height>15</height>
                   </size>
                  </property>
                 </spacer>
@@ -1888,7 +1885,7 @@
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
-                 <height>15</height>
+                 <height>10</height>
                 </size>
                </property>
               </spacer>
@@ -1941,7 +1938,7 @@
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
-                 <height>15</height>
+                 <height>10</height>
                 </size>
                </property>
               </spacer>
@@ -1962,20 +1959,37 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLabel" name="label_month">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <property name="spacing">
+                  <number>3</number>
                  </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
+                 <item>
+                  <widget class="QLabel" name="label_month">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_calendar_year">
+                   <property name="text">
+                    <string/>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
                <item>
                 <widget class="QPushButton" name="pushButton_next">
@@ -1993,7 +2007,7 @@
               </layout>
              </item>
              <item>
-              <spacer name="horizontalSpacer_11">
+              <spacer name="horizontalSpacer_13">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
@@ -2020,7 +2034,7 @@
              </item>
             </layout>
            </item>
-           <item row="1" column="0">
+           <item>
             <spacer name="horizontalSpacer_9">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>

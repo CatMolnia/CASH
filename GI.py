@@ -295,6 +295,12 @@ class StartWindow:
         self.ui.label_calendar_month.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
         self.ui.label_calendar_month.setContentsMargins(0, 0, 0, 0) # убираем внутренние отступы
         self.ui.label_calendar_month.setIndent(0) # убираем отступ текста
+
+        # настройка label_calendar_year
+        self.ui.label_calendar_year.setStyleSheet(self.widget_calendar.label_calendar_year) # применяем стиль к label_calendar_year
+        self.ui.label_calendar_year.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter) # выравниваем по левому краю
+        self.ui.label_calendar_year.setContentsMargins(0, 0, 0, 0) # убираем внутренние отступы
+        self.ui.label_calendar_year.setIndent(0) # убираем отступ текста
         
         # настройка progressBar_calendar
         self.ui.progressBar_calendar.setStyleSheet(self.widget_calendar.progressBar_calendar) # применяем стиль к progressBar_calendar
@@ -318,14 +324,17 @@ class StartWindow:
         self.ui.pushButton_last.setStyleSheet(self.widget_calendar.pushButton_last) # применяем стиль к pushButton_last
         self.ui.pushButton_next.setStyleSheet(self.widget_calendar.pushButton_next) # применяем стиль к pushButton_next
 
-        # логика смены месяца (обновляем обе метки месяца)
-        self.month_logic = CalendarLogic(
-            self.ui.label_month,
-            self.ui.tableWidget_calendar
-            ) # инициализируем управление месяцами
+        # логика смены месяца и таблицы календаря
+        self.calendar_logic = CalendarLogic(
+            self.ui.label_month, # инициализируем метку месяца
+            self.ui.tableWidget_calendar, # инициализируем таблицу календаря
+            self.ui.label_calendar_day, # инициализируем метку дня
+            self.ui.label_calendar_month, # инициализируем метку месяца
+            self.ui.label_calendar_year # инициализируем метку года
+            )
 
-        self.ui.pushButton_last.clicked.connect(self.month_logic.prev_month) # переход к предыдущему месяцу
-        self.ui.pushButton_next.clicked.connect(self.month_logic.next_month) # переход к следующему месяцу
+        self.ui.pushButton_last.clicked.connect(self.calendar_logic.prev_month) # переход к предыдущему месяцу
+        self.ui.pushButton_next.clicked.connect(self.calendar_logic.next_month) # переход к следующему месяцу
 
         # настройка label_month
         self.ui.label_month.setStyleSheet(self.widget_calendar.label_month) # применяем стиль к label_month
