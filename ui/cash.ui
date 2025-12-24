@@ -1819,7 +1819,7 @@
                     </sizepolicy>
                    </property>
                    <property name="text">
-                    <string>Ноября</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
@@ -1970,7 +1970,7 @@
                   </sizepolicy>
                  </property>
                  <property name="text">
-                  <string>ноябрь</string>
+                  <string/>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignCenter</set>

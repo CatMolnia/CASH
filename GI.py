@@ -1,6 +1,7 @@
-from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap, QIcon
+from MainLogic import CalendarLogic
 from __config import (AppWindowConfig, GeneralInformation, SecondaryInformation,
                       WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans,
                       WidgetTableZP, WidgetTableAvans, WidgetCalendar)
@@ -309,30 +310,44 @@ class StartWindow:
         
         # если иконки не пустые, добавляем их на кнопки
         if not last_icon.isNull() and not next_icon.isNull():
-            self.ui.pushButton_last.setIcon(QIcon(last_icon))
-            self.ui.pushButton_next.setIcon(QIcon(next_icon))
-            self.ui.pushButton_last.setIconSize(QSize(18, 18))
-            self.ui.pushButton_next.setIconSize(QSize(18, 18))
+            self.ui.pushButton_last.setIcon(QIcon(last_icon)) # устанавливаем иконку на кнопку last
+            self.ui.pushButton_next.setIcon(QIcon(next_icon)) # устанавливаем иконку на кнопку next
+            self.ui.pushButton_last.setIconSize(QSize(18, 18)) # устанавливаем размер иконки
+            self.ui.pushButton_next.setIconSize(QSize(18, 18)) # устанавливаем размер иконки
 
         self.ui.pushButton_last.setStyleSheet(self.widget_calendar.pushButton_last) # применяем стиль к pushButton_last
         self.ui.pushButton_next.setStyleSheet(self.widget_calendar.pushButton_next) # применяем стиль к pushButton_next
+
+        # логика смены месяца (обновляем обе метки месяца)
+        self.month_logic = CalendarLogic(
+            self.ui.label_month,
+            self.ui.tableWidget_calendar
+            ) # инициализируем управление месяцами
+
+        self.ui.pushButton_last.clicked.connect(self.month_logic.prev_month) # переход к предыдущему месяцу
+        self.ui.pushButton_next.clicked.connect(self.month_logic.next_month) # переход к следующему месяцу
 
         # настройка label_month
         self.ui.label_month.setStyleSheet(self.widget_calendar.label_month) # применяем стиль к label_month
 
         # настройка tableWidget_calendar
-        self.ui.tableWidget_calendar.setStyleSheet(self.widget_calendar.tableWidget_calendar) # применяем стиль к tableWidget_calendar
-
-        # настройка tableWidget_calendar в части числе и дней недели
         table = self.ui.tableWidget_calendar # присваиваем tableWidget_calendar к table
 
         table.setRowCount(6) # устанавливаем количество строк
         table.setColumnCount(7) # устанавливаем количество столбцов
 
         table.setHorizontalHeaderLabels(
-            ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"] # устанавливаем заголовки столбцов
+            ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
         )
 
+        # параметры tableWidget_calendar
         table.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
         table.setShowGrid(False) # устанавливаем видимость сетки
         table.setFrameShape(table.Shape.NoFrame) # устанавливаем форму фрейма
+        #table.resizeRowsToContents() # подгоняем размеры строк
+        table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
+        table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
+        table.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки горизонтальной полосы
+        table.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки вертикальной полосы
+
+        self.ui.tableWidget_calendar.setStyleSheet(self.widget_calendar.tableWidget_calendar) # применяем стиль к tableWidget_calendar

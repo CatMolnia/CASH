@@ -483,20 +483,26 @@ class WidgetCalendar:
     )
 
     tableWidget_calendar = """
+        /* настройка фона таблицы */
         QTableWidget {
             background: #FFFFFF;
         }
+        /* настройка заголовков столбцов */
         QHeaderView::section {
-            background: transparent;
+            color: #B8BFBC;
+            background: #FFFFFF;
             border: none;
             font-weight: 500;
         }
+        /* настройка ячеек таблицы */
         QTableWidget::item {
-            padding: 6px;
-            border-radius: 6px;
+            padding: 5px; 
+            border-radius: none; 
+            color: black;
         }
+        /* настройка выделения ячеек таблицы */
         QTableWidget::item:selected {
-            background: #ff5a5a;
-            color: red;
+            background: none; 
+            color: none; 
         }
         """
