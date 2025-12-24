@@ -324,7 +324,7 @@ class StartWindow:
         self.ui.pushButton_last.setStyleSheet(self.widget_calendar.pushButton_last) # применяем стиль к pushButton_last
         self.ui.pushButton_next.setStyleSheet(self.widget_calendar.pushButton_next) # применяем стиль к pushButton_next
 
-        # логика смены месяца и таблицы календаря
+        # логика смены данных календаря
         self.calendar_logic = CalendarLogic(
             self.ui.label_month, # инициализируем метку месяца
             self.ui.tableWidget_calendar, # инициализируем таблицу календаря
@@ -353,7 +353,6 @@ class StartWindow:
         table.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
         table.setShowGrid(False) # устанавливаем видимость сетки
         table.setFrameShape(table.Shape.NoFrame) # устанавливаем форму фрейма
-        #table.resizeRowsToContents() # подгоняем размеры строк
         table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
         table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
         table.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки горизонтальной полосы

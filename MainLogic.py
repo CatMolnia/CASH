@@ -15,13 +15,13 @@ class CalendarLogic:
                  label_calendar_month: QLabel = None,
                  label_calendar_year: QLabel = None):
         self.label_month = label_month # метка для отображения месяца
-        self.tableWidget_calendar = tableWidget_calendar
+        self.tableWidget_calendar = tableWidget_calendar # таблица для отображения календаря
         self.label_calendar_day = label_calendar_day # метка для отображения дня
         self.label_calendar_month = label_calendar_month # метка для отображения месяца
         self.label_calendar_year = label_calendar_year # метка для отображения года
         
-        today = date.today() # текущая дата
-        self.year = today.year # текущий год
+        self.today = date.today() # текущая дата
+        self.year = self.today.year # текущий год
         
         self.months = [
             "Январь", "Февраль", "Март",
@@ -30,15 +30,11 @@ class CalendarLogic:
             "Октябрь", "Ноябрь", "Декабрь",
         ]
 
-        self.current_month_index = today.month - 1 # текущий месяц (индекс от 0)
-        self.set_month(self.current_month_index) # устанавливаем текст месяца
-        
-        # устанавливаем текущий день и месяц в label_calendar_day и label_calendar_month
-        if self.label_calendar_day and self.label_calendar_month and self.label_calendar_year:
-            self.show_day_and_month(today.day, today.month, today.year)
+        self.current_month_index = self.today.month - 1 # текущий месяц (индекс от 0)
+        self.set_date(self.current_month_index) # устанавливаем текст месяца
 
-    # функция для установки текста месяца
-    def set_month(self, index: int):
+    # функция для установки текста месяца и года
+    def set_date(self, index: int):
         """Устанавливаем текст месяца по индексу с циклическим переходом."""
         # Обрабатываем переходы между годами
         if index < 0:
@@ -51,18 +47,25 @@ class CalendarLogic:
             index = 0
         
         self.current_month_index = index # устанавливаем текущий месяц
-        self.label_month.setText(self.months[self.current_month_index]) # устанавливаем текст месяца
+
+        self.label_calendar_day.setText(str(self.today.day)) # устанавливаем текст текущего дня
+        self.label_calendar_month.setText(str(self.months[self.today.month - 1])) # устанавливаем текст текущего месяца
+
+        self.label_month.setText(self.months[self.current_month_index]) # устанавливаем текст месяца (с возможностью смены)
+        self.label_calendar_year.setText(str(self.year)) # устанавливаем текст года (с возможностью смены)
+        
         self.show_days() # отображаем дни в календаре
+        self.set_year(self.year) # устанавливаем год
 
     # функция для перехода к предыдущему месяцу
     def prev_month(self):
         """Переходим к предыдущему месяцу."""
-        self.set_month(self.current_month_index - 1)
+        self.set_date(self.current_month_index - 1)
 
     # функция для перехода к следующему месяцу
     def next_month(self):
         """Переходим к следующему месяцу."""
-        self.set_month(self.current_month_index + 1)
+        self.set_date(self.current_month_index + 1)
     
     # функция для отображения дней в календаре
     def show_days(self):
@@ -81,9 +84,8 @@ class CalendarLogic:
                 item = QTableWidgetItem(text) # создаем элемент таблицы
                 item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter) # устанавливаем выравнивание текста по центру
                 self.tableWidget_calendar.setItem(row, col, item) # устанавливаем элемент в таблицу
-    
-    # функция для отображения дня, месяца и года в label_calendar_day и label_calendar_month, label_calendar_year
-    def show_day_and_month(self, day: int, month: int, year: int):
-        self.label_calendar_day.setText(str(day)) # устанавливаем текст дня
-        self.label_calendar_month.setText(self.months[month - 1]) # устанавливаем текст месяца
+
+    # функция для установки текста года
+    def set_year(self, year: int):
+        self.year = year # устанавливаем год
         self.label_calendar_year.setText(str(year)) # устанавливаем текст года

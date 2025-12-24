@@ -422,7 +422,7 @@ class WidgetCalendar:
         "padding-bottom: 0px; "
         "margin-left: 0px; "
         "font-size: 16px; "
-        "font-weight: 400; "
+        "font-weight: 500; "
         "text-align: left;"
     )
 
@@ -443,23 +443,26 @@ class WidgetCalendar:
         "QProgressBar {"
         "  background-color: rgba(0, 0, 0, 0.07);"
         "  border: none;"
-        "  border-radius: 3px;"
-        "  min-height: 6px;"
-        "  max-height: 6px;"
+        "  border-radius: 2px;"
+        "  min-height: 4px;"
+        "  max-height: 4px;"
         "}"
         "QProgressBar::chunk {"
         "  background-color: qlineargradient("
         "    x1:0, y1:0, x2:0, y2:1, "
         "    stop:0 #FF8A8A, stop:1 #FF3B30"
         "  );"
-        "  border-radius: 3px;"
+        "  border-radius: 2px;"
         "}"
     )
 
     pushButton_last = """
         QPushButton {
             background-color: #FFFFFF;
-            border: none;
+            border-top: 2px solid #94A3B8;
+            border-left: 2px solid #94A3B8;
+            border-bottom: 2px solid #E2E8F0;
+            border-right: 2px solid #E2E8F0;
             border-radius: 8px;
             padding: 0px 20px;
             font-size: 16px;
@@ -476,7 +479,10 @@ class WidgetCalendar:
     pushButton_next = """
         QPushButton {
             background-color: #FFFFFF;
-            border: none;
+            border-top: 2px solid #94A3B8;
+            border-left: 2px solid #94A3B8;
+            border-bottom: 2px solid #E2E8F0;
+            border-right: 2px solid #E2E8F0;
             border-radius: 8px; 
             padding: 0px 20px;  /* отступы внутри кнопки */
             font-size: 16px;  /* размер текста */
@@ -496,26 +502,49 @@ class WidgetCalendar:
     )
 
     tableWidget_calendar = """
-        /* настройка фона таблицы */
         QTableWidget {
-            background: #FFFFFF;
+            background-color: #F4F4F4;
+            border-top: 2px solid #94A3B8;
+            border-left: 2px solid #94A3B8;
+            border-bottom: 2px solid #E2E8F0;
+            border-right: 2px solid #E2E8F0;
+            gridline-color: transparent;
         }
-        /* настройка заголовков столбцов */
+
+        /* Заголовки столбцов */
+        QHeaderView {
+            background: transparent;
+        }
+
+        /* Заголовки столбцов */
         QHeaderView::section {
-            color: #B8BFBC;
-            background: #FFFFFF;
-            border: none;
+            color: #374151;
+            background-color: #FFFFFF;
             font-weight: 500;
+            font-size: 12px;
+            border: none;
+            padding: 3px 6px;
         }
-        /* настройка ячеек таблицы */
+
+        /* Верхний левый угол */
+        QHeaderView::section:horizontal:first {
+            border-top-left-radius: 10px;
+        }
+
+        /* Верхний правый угол */
+        QHeaderView::section:horizontal:last {
+            border-top-right-radius: 10px;
+        }
+
+        /* Ячейки таблицы */
         QTableWidget::item {
-            padding: 5px; 
-            border-radius: none; 
+            padding: 5px;
             color: black;
         }
-        /* настройка выделения ячеек таблицы */
+
+        /* Выделение ячеек */
         QTableWidget::item:selected {
-            background: none; 
-            color: none; 
+            background: none;
+            color: black;
         }
-        """
+    """

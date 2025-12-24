@@ -1938,7 +1938,7 @@
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
-                 <height>10</height>
+                 <height>8</height>
                 </size>
                </property>
               </spacer>
@@ -1961,7 +1961,7 @@
                <item>
                 <layout class="QVBoxLayout" name="verticalLayout_6">
                  <property name="spacing">
-                  <number>3</number>
+                  <number>2</number>
                  </property>
                  <item>
                   <widget class="QLabel" name="label_month">
@@ -2017,7 +2017,7 @@
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
-                 <height>10</height>
+                 <height>8</height>
                 </size>
                </property>
               </spacer>
