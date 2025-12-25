@@ -1919,8 +1919,11 @@
                <property name="minimum">
                 <number>0</number>
                </property>
+               <property name="maximum">
+                <number>0</number>
+               </property>
                <property name="value">
-                <number>63</number>
+                <number>0</number>
                </property>
                <property name="format">
                 <string/>

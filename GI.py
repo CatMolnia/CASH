@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView, QAbstractItemView
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap, QIcon
 from MainLogic import CalendarLogic
@@ -118,6 +118,10 @@ class StartWindow:
         self.ui.lineEdit_calendar.setMaximumSize(QSize(40, 16777215)) # увеличиваем максимальный размер lineEdit_calendar
         self.ui.lineEdit_weekend.setMaximumSize(QSize(40, 16777215)) # увеличиваем максимальный размер lineEdit_weekend
         self.ui.lineEdit_work.setMaximumSize(QSize(40, 16777215)) # увеличиваем максимальный размер lineEdit_work
+
+        self.ui.lineEdit_calendar.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter) # выравниваем текст по центру
+        self.ui.lineEdit_weekend.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter) # выравниваем текст по центру
+        self.ui.lineEdit_work.setAlignment(Qt.AlignmentFlag.AlignCenter | Qt.AlignmentFlag.AlignVCenter) # выравниваем текст по центру
 
         # _________________________________secondary_information_________________________________
         
@@ -330,9 +334,13 @@ class StartWindow:
             self.ui.tableWidget_calendar, # инициализируем таблицу календаря
             self.ui.label_calendar_day, # инициализируем метку дня
             self.ui.label_calendar_month, # инициализируем метку месяца
-            self.ui.label_calendar_year # инициализируем метку года
+            self.ui.label_calendar_year, # инициализируем метку года
+            self.ui.progressBar_calendar, # инициализируем progressBar
+            self.ui.lineEdit_calendar, # инициализируем lineEdit_calendar
+            self.ui.lineEdit_work, # инициализируем lineEdit_work
+            self.ui.lineEdit_weekend # инициализируем lineEdit_weekend
             )
-
+        
         self.ui.pushButton_last.clicked.connect(self.calendar_logic.prev_month) # переход к предыдущему месяцу
         self.ui.pushButton_next.clicked.connect(self.calendar_logic.next_month) # переход к следующему месяцу
 
@@ -357,5 +365,8 @@ class StartWindow:
         table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
         table.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки горизонтальной полосы
         table.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки вертикальной полосы
+        table.setEditTriggers(self.ui.tableWidget_calendar.EditTrigger.NoEditTriggers) # устанавливаем режим редактирования (отключаем)
+        table.setSelectionMode(QAbstractItemView.SelectionMode.NoSelection) # отключаем выделение ячеек в tableWidget_calendar
+        table.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на tableWidget_calendar
 
         self.ui.tableWidget_calendar.setStyleSheet(self.widget_calendar.tableWidget_calendar) # применяем стиль к tableWidget_calendar

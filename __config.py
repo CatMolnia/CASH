@@ -536,15 +536,7 @@ class WidgetCalendar:
             border-top-right-radius: 10px;
         }
 
-        /* Ячейки таблицы */
         QTableWidget::item {
-            padding: 5px;
-            color: black;
-        }
-
-        /* Выделение ячеек */
-        QTableWidget::item:selected {
-            background: none;
-            color: black;
+            padding: 3px;
         }
     """
