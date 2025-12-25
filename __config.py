@@ -514,7 +514,7 @@ class WidgetCalendar:
         /* Заголовки столбцов */
         QHeaderView::section {
             color: #4B5563;
-            background-color: #FFFFFF;
+            background-color: #E5E7EB;
             font-weight: 800;
             font-size: 12px;
             border: none;

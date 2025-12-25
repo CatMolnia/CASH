@@ -177,6 +177,7 @@ class CalendarLogic:
                 for d in not_weekend_list # проходим по списку рабочих выходных дней
             }
 
+        # отображаем дни в календаре
         for row, week in enumerate(weeks):
             for col, day in enumerate(week):
                 text = "" if day == 0 else str(day) # если день равен 0, то устанавливаем пустой текст
