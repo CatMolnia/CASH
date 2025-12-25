@@ -512,15 +512,10 @@ class WidgetCalendar:
         }
 
         /* Заголовки столбцов */
-        QHeaderView {
-            background: transparent;
-        }
-
-        /* Заголовки столбцов */
         QHeaderView::section {
-            color: #374151;
+            color: #4B5563;
             background-color: #FFFFFF;
-            font-weight: 500;
+            font-weight: 800;
             font-size: 12px;
             border: none;
             padding: 3px 6px;
@@ -534,9 +529,5 @@ class WidgetCalendar:
         /* Верхний правый угол */
         QHeaderView::section:horizontal:last {
             border-top-right-radius: 10px;
-        }
-
-        QTableWidget::item {
-            padding: 3px;
         }
     """
