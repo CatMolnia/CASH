@@ -202,6 +202,9 @@ class CalendarLogic:
                     elif is_weekend and not is_working_weekend:
                         item.setBackground(QColor("#FECACA")) # светло-красный фон
                         item.setForeground(QColor("#7F1D1D"))
+                    # для обычных рабочих дней устанавливаем цвет текста
+                    else:
+                        item.setForeground(QColor("#4B5563")) # темно-серый цвет для обычных дней
                 
                 self.tableWidget_calendar.setItem(row, col, item) # устанавливаем элемент в таблицу
 
