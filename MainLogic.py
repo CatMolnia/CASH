@@ -7,6 +7,8 @@ from datetime import date, datetime
 
 import json
 
+from rounded_delegate import RoundedItemDelegate
+
 class CalendarLogic:
     
     """ЛОГИКА СМЕНЫ МЕСЯЦА В КАЛЕНДАРЕ."""
@@ -45,6 +47,11 @@ class CalendarLogic:
         ]
 
         self.current_month_index = self.month - 1 # текущий месяц (индекс от 0)
+        
+        # Устанавливаем делегат для закругленных углов ячеек
+        delegate = RoundedItemDelegate(self.tableWidget_calendar, radius=8)
+        self.tableWidget_calendar.setItemDelegate(delegate)
+        
         self.set_date(self.current_month_index) # устанавливаем текст месяца
 
     """ЛОГИКА ОПРЕДЕЛЕНИЯ КОЛИЧЕСТВА ДНЕЙ В МЕСЯЦЕ, НЕРАБОЧИХ ДНЕЙ И РАБОЧИХ ДНЕЙ"""
