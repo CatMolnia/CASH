@@ -432,16 +432,31 @@ class StartWindow:
         if label_day not in self.label_edits:
             return
         
-        edit_data = self.label_edits[label_day]
-        stacked_layout = edit_data['stacked_layout']
+        edit_data = self.label_edits[label_day] # получаем данные из словаря label_edits
+        stacked_layout = edit_data['stacked_layout'] # получаем stacked_layout из данных
         
         # сохраняем текст из lineEdit в label
-        text = line_edit.text()
-        label_day.setText(text)
+        text = line_edit.text() # получаем текст из lineEdit
+        if not text:
+            # переключаемся обратно на label без изменений
+            stacked_layout.setCurrentIndex(0)
+            # сбрасываем текущий редактируемый label
+            if self.current_editing_label == label_day:
+                self.current_editing_label = None
+            return
+        
+        try:
+            value = int(text) # преобразуем текст в число
+            formatted_text = f"{value:,}".replace(",", " ") # заменяем запятые на пробелы
+
+            label_day.setText(formatted_text)
+        except ValueError:
+            # если введено не число, оставляем старое значение (не обновляем label)
+            pass
         
         # переключаемся обратно на label
-        stacked_layout.setCurrentIndex(0)
+        stacked_layout.setCurrentIndex(0) # переключаемся обратно на label
         
         # сбрасываем текущий редактируемый label
-        if self.current_editing_label == label_day:
-            self.current_editing_label = None
+        if self.current_editing_label == label_day: # если текущий редактируемый label равен label_day
+            self.current_editing_label = None # сбрасываем текущий редактируемый label

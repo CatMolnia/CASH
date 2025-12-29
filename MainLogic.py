@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QLabel, QTableWidget, QTableWidgetItem, QProgressBar, QLineEdit
-from PyQt6.QtGui import QColor
+from PyQt6.QtGui import QColor, QIntValidator
 from PyQt6 import QtCore
 
 from calendar import monthcalendar, calendar, monthrange
@@ -251,6 +251,8 @@ class CalendarLogic:
         month = self.current_month_index + 1
         calendar_days = monthrange(self.year, month)[1]  # количество дней в месяце
 
+        validator = QIntValidator(0, 999999) # создаем валидатор для целых чисел
+
         # загружаем данные о праздниках и рабочих выходных для подсветки
         with open("holidays.json", "r", encoding="utf-8") as f:
             holidays_data = json.load(f) # загружаем данные из файла
@@ -305,7 +307,12 @@ class CalendarLogic:
             label_day = getattr(self.ui, f"label_day_{day}", None)
             label_head_day = getattr(self.ui, f"label_head_day_{day}", None)
             line_edit_day = getattr(self.ui, f"lineEdit_day_{day}", None)
-            if label_day is not None and label_head_day is not None and line_edit_day is not None and self.widget_days_zp_avans is not None:
+            if label_day is not None and label_head_day is not None and line_edit_day is not None:
                 label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # устанавливаем стандартный стиль для дней вне текущего месяца
                 label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day) # устанавливаем стандартный стиль для дней вне текущего месяца
                 line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day) # устанавливаем стандартный стиль для дней вне текущего месяца
+
+        for day in range(1, calendar_days + 1, 32): # (+ 1 потому что нумерация дней начинается с 1, а в range начинается с 0)
+            line_edit_day = getattr(self.ui, f"lineEdit_day_{day}", None)
+            if line_edit_day is not None:
+                line_edit_day.setValidator(validator) # устанавливаем валидатор для lineEdit_day
