@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView, QAbstractItemView
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView, QAbstractItemView, QLineEdit, QStackedLayout
 from PyQt6.QtCore import Qt, QSize
 from PyQt6.QtGui import QColor, QPixmap, QIcon
 from MainLogic import CalendarLogic
@@ -196,15 +196,6 @@ class StartWindow:
         shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
         shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
         self.ui.widget_days_zp.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_zp
-        
-        # применяем стили к label_head_day и label_day (от 1 до 31)
-        for i in range(1, 32):
-            label_head = getattr(self.ui, f"label_head_day_{i}", None)
-            label_day = getattr(self.ui, f"label_day_{i}", None)
-            if label_head:
-                label_head.setStyleSheet(self.widget_days_zp_avans.label_head_day) # применяем стиль к label_head_day
-            if label_day:
-                label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # применяем стиль к label_day
 
         # _________________________________widget_days_avans_________________________________
         
@@ -220,14 +211,57 @@ class StartWindow:
         shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
         self.ui.widget_days_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_avans
         
+        # общая логика для widget_days_zp и widget_days_avans
+        
         # применяем стили к label_head_day и label_day (от 1 до 31)
+        # и настраиваем логику переключения между QLabel и QLineEdit
+        self.label_edits = {}  # словарь для хранения соответствия label -> lineEdit
+        self.current_editing_label = None  # текущий редактируемый label
+        
         for i in range(1, 32):
-            label_head = getattr(self.ui, f"label_head_day_{i}", None)
-            label_day = getattr(self.ui, f"label_day_{i}", None)
+            label_head = getattr(self.ui, f"label_head_day_{i}", None) # получаем соответствующий label_head_day_i
+            label_day = getattr(self.ui, f"label_day_{i}", None) # получаем соответствующий label_day_i
             if label_head:
                 label_head.setStyleSheet(self.widget_days_zp_avans.label_head_day) # применяем стиль к label_head_day
             if label_day:
                 label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # применяем стиль к label_day
+                label_day.setAlignment(Qt.AlignmentFlag.AlignCenter)
+                
+                # создаем QLineEdit для этого label_day
+                line_edit = QLineEdit()
+                line_edit.setAlignment(Qt.AlignmentFlag.AlignCenter)
+                line_edit.setStyleSheet(self.widget_days_zp_avans.lineEdit_day)
+                # Не вызываем hide() - видимость управляется через QStackedLayout.setCurrentIndex()
+                
+                # получаем родительский layout (day_i)
+                day_layout = getattr(self.ui, f"day_{i}", None)
+                if day_layout:
+                    # находим позицию label_day в layout
+                    label_index = day_layout.indexOf(label_day)
+                    if label_index >= 0:
+                        # создаем QStackedLayout для переключения между label и lineEdit
+                        stacked_layout = QStackedLayout()
+                        stacked_layout.addWidget(label_day)  # индекс 0 - label
+                        stacked_layout.addWidget(line_edit)  # индекс 1 - lineEdit
+                        stacked_layout.setCurrentIndex(0)  # показываем label
+                        
+                        # заменяем label_day на stacked_layout в day_layout
+                        day_layout.removeWidget(label_day)
+                        day_layout.insertLayout(label_index, stacked_layout)
+                        
+                        # сохраняем связь между label, lineEdit и stacked_layout
+                        self.label_edits[label_day] = {
+                            'line_edit': line_edit,
+                            'stacked_layout': stacked_layout
+                        }
+                        
+                        setattr(self.ui, f"lineEdit_day_{i}", line_edit) # сохраняем lineEdit как атрибут UI для доступа из MainLogic
+                        
+                        # подключаем обработчики событий
+                        label_day.mousePressEvent = lambda event, lbl=label_day: self.start_edit(lbl, event)
+                        line_edit.editingFinished.connect(lambda le=line_edit, lbl=label_day: self.finish_edit(lbl, le))
+                        line_edit.returnPressed.connect(lambda le=line_edit, lbl=label_day: self.finish_edit(lbl, le))
+
 
         # _________________________________widget_table_zp_________________________________
 
@@ -338,7 +372,9 @@ class StartWindow:
             self.ui.progressBar_calendar, # инициализируем progressBar
             self.ui.lineEdit_calendar, # инициализируем lineEdit_calendar
             self.ui.lineEdit_work, # инициализируем lineEdit_work
-            self.ui.lineEdit_weekend # инициализируем lineEdit_weekend
+            self.ui.lineEdit_weekend, # инициализируем lineEdit_weekend
+            self.ui, # передаем UI для доступа к label_day_i
+            self.widget_days_zp_avans # передаем конфигурацию для стилей
             )
         
         self.ui.pushButton_last.clicked.connect(self.calendar_logic.prev_month) # переход к предыдущему месяцу
@@ -370,3 +406,42 @@ class StartWindow:
         table.setFocusPolicy(Qt.FocusPolicy.NoFocus) # отключаем фокус на tableWidget_calendar
 
         self.ui.tableWidget_calendar.setStyleSheet(self.widget_calendar.tableWidget_calendar) # применяем стиль к tableWidget_calendar
+
+    def start_edit(self, label_day, event):
+        """Начинаем редактирование label_day - переключаемся на QLineEdit"""
+        if label_day not in self.label_edits:
+            return
+        
+        edit_data = self.label_edits[label_day]
+        line_edit = edit_data['line_edit']
+        stacked_layout = edit_data['stacked_layout']
+        
+        # сохраняем текущий редактируемый label
+        self.current_editing_label = label_day
+        
+        # устанавливаем текст из label в lineEdit
+        line_edit.setText(label_day.text())
+        line_edit.selectAll()
+        
+        # переключаемся на lineEdit
+        stacked_layout.setCurrentIndex(1)
+        line_edit.setFocus()
+
+    def finish_edit(self, label_day, line_edit):
+        """Завершаем редактирование - сохраняем текст и переключаемся обратно на QLabel"""
+        if label_day not in self.label_edits:
+            return
+        
+        edit_data = self.label_edits[label_day]
+        stacked_layout = edit_data['stacked_layout']
+        
+        # сохраняем текст из lineEdit в label
+        text = line_edit.text()
+        label_day.setText(text)
+        
+        # переключаемся обратно на label
+        stacked_layout.setCurrentIndex(0)
+        
+        # сбрасываем текущий редактируемый label
+        if self.current_editing_label == label_day:
+            self.current_editing_label = None

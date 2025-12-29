@@ -22,7 +22,9 @@ class CalendarLogic:
                  progressBar: QProgressBar = None,
                  lineEdit_calendar: QLineEdit = None,
                  lineEdit_work: QLineEdit = None,
-                 lineEdit_weekend: QLineEdit = None):
+                 lineEdit_weekend: QLineEdit = None,
+                 ui = None,
+                 widget_days_zp_avans = None):
 
         self.label_month = label_month # метка для отображения месяца
         self.tableWidget_calendar = tableWidget_calendar # таблица для отображения календаря
@@ -33,6 +35,8 @@ class CalendarLogic:
         self.lineEdit_calendar = lineEdit_calendar # lineEdit для отображения кол-ва дней в месяце
         self.lineEdit_work = lineEdit_work # lineEdit для отображения кол-ва рабочих дней
         self.lineEdit_weekend = lineEdit_weekend # lineEdit для отображения кол-ва выходных дней
+        self.ui = ui # UI для доступа к label_day_i
+        self.widget_days_zp_avans = widget_days_zp_avans # конфигурация для стилей label_day
         
         self.today = date.today() # текущая дата
         self.year = self.today.year # текущий год
@@ -46,7 +50,7 @@ class CalendarLogic:
             "Октябрь", "Ноябрь", "Декабрь",
         ]
 
-        self.current_month_index = self.month - 1 # текущий месяц (индекс от 0)
+        self.current_month_index = self.month - 1 # текущий месяц (индекс от 0) (- 1 потому что нумерация месяцев начинается с 0, а в calendar начинается с 1)
         
         # Устанавливаем делегат для закругленных углов ячеек
         delegate = RoundedItemDelegate(self.tableWidget_calendar, radius=8)
@@ -129,6 +133,7 @@ class CalendarLogic:
         self.label_calendar_year.setText(str(self.year)) # устанавливаем текст года (с возможностью смены)
         
         self.show_days() # отображаем дни в календаре
+        self.show_days_zp_avans() # отображаем дни в widget_days_zp
         self.show_year() # устанавливаем год
         
         # обновляем прогрессбар при смене месяца
@@ -184,7 +189,7 @@ class CalendarLogic:
                 item = QTableWidgetItem(text) # создаем элемент таблицы
                 item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignCenter) # устанавливаем выравнивание текста по центру
                 
-                # подсветка дней
+                # подсветка дней в календаре
                 if day != 0: # если день валидный (не пустой)
                     current_date = date(self.year, month, day) # создаем дату текущего дня
                     
@@ -208,8 +213,6 @@ class CalendarLogic:
                         item.setForeground(QColor("#4B5563")) # темно-серый цвет для обычных дней
                 
                 self.tableWidget_calendar.setItem(row, col, item) # устанавливаем элемент в таблицу
-
-                
 
     # функция для установки текста года
     def show_year(self, year: int = None):
@@ -240,3 +243,69 @@ class CalendarLogic:
         self.progressBar.setMinimum(first_day)
         self.progressBar.setMaximum(last_day)
         self.progressBar.setValue(value)
+
+    """ЛОГИКА WIDGET_DAYS_ZP_AVANS"""
+
+    # функция отображения выходных и празжничных дней в widget_days_zp
+    def show_days_zp_avans(self):        
+        month = self.current_month_index + 1
+        calendar_days = monthrange(self.year, month)[1]  # количество дней в месяце
+
+        # загружаем данные о праздниках и рабочих выходных для подсветки
+        with open("holidays.json", "r", encoding="utf-8") as f:
+            holidays_data = json.load(f) # загружаем данные из файла
+            holidays_list = holidays_data.get("holidays", []) # получаем список праздников
+            not_weekend_list = holidays_data.get("not_weekend", []) # получаем список рабочих выходных дней
+            
+            # преобразуем списки дат в множества для быстрого поиска
+            non_working_days_set = {
+                datetime.strptime(d, "%d.%m.%Y").date() # преобразуем строку в дату
+                for d in holidays_list # проходим по списку праздников
+            }
+            working_weekends_set = {
+                datetime.strptime(d, "%d.%m.%Y").date() # преобразуем строку в дату
+                for d in not_weekend_list # проходим по списку рабочих выходных дней
+            }
+
+        # проходим по всем дням месяца и применяем стили к соответствующим label_day_i
+        for day in range(1, calendar_days + 1): # (+ 1 потому что нумерация дней начинается с 1, а в range начинается с 0)
+            current_date = date(self.year, month, day) # создаем дату текущего дня (год, месяц, день)
+            
+            # проверяем, является ли день праздником
+            is_holiday = current_date in non_working_days_set
+            
+            # проверяем, является ли день выходным (weekday >= 5: суббота=5, воскресенье=6)
+            is_weekend = current_date.weekday() >= 5
+            is_working_weekend = current_date in working_weekends_set
+            
+            # получаем соответствующий label_day_i
+            label_day = getattr(self.ui, f"label_day_{day}", None) # получаем соответствующий label_day_i
+            label_head_day = getattr(self.ui, f"label_head_day_{day}", None) # получаем соответствующий label_head_day_i
+            line_edit_day = getattr(self.ui, f"lineEdit_day_{day}", None) # получаем соответствующий lineEdit_day_i
+            if label_day is None or label_head_day is None or line_edit_day is None:
+                continue  # если label не найден, пропускаем
+            
+            # применяем стили в зависимости от типа дня
+            if self.widget_days_zp_avans is not None:
+                if is_holiday:
+                    label_day.setStyleSheet(self.widget_days_zp_avans.label_day_weekend_holiday) # подсветка праздников (красный фон)
+                    label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day_weekend_holiday) # подсветка праздников (красный фон)
+                    line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day_weekend_holiday) # подсветка праздников (красный фон)
+                elif is_weekend and not is_working_weekend:
+                    label_day.setStyleSheet(self.widget_days_zp_avans.label_day_weekend_holiday) # подсветка выходных дней (красный фон)
+                    label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day_weekend_holiday) # подсветка выходных дней (красный фон)
+                    line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day_weekend_holiday) # подсветка выходных дней (красный фон)
+                else:
+                    label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # для обычных рабочих дней устанавливаем стандартный стиль
+                    label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day) # для обычных рабочих дней устанавливаем стандартный стиль
+                    line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day) # для обычных рабочих дней устанавливаем стандартный стиль
+        
+        # сбрасываем стили для дней, которых нет в текущем месяце (например, 31-е в месяце с 30 днями)
+        for day in range(calendar_days + 1, 32): # (+ 1 потому что нумерация дней начинается с 1, а в range начинается с 0)
+            label_day = getattr(self.ui, f"label_day_{day}", None)
+            label_head_day = getattr(self.ui, f"label_head_day_{day}", None)
+            line_edit_day = getattr(self.ui, f"lineEdit_day_{day}", None)
+            if label_day is not None and label_head_day is not None and line_edit_day is not None and self.widget_days_zp_avans is not None:
+                label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # устанавливаем стандартный стиль для дней вне текущего месяца
+                label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day) # устанавливаем стандартный стиль для дней вне текущего месяца
+                line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day) # устанавливаем стандартный стиль для дней вне текущего месяца

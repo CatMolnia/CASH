@@ -286,6 +286,50 @@ class WidgetDaysZpAvans:
         "font-weight: 500;"
     )
 
+    # конфиг для lineEdit_day (lineEdit_day_1 - lineEdit_day_31)
+    lineEdit_day = (
+        "color: #4B5563;"
+        "border: 1px solid #585959;"
+        "background-color: #F4F4F4;"
+        "border-radius: 8px;"
+        "padding: 4px 4px;"
+        "font-size: 16px;"
+        "font-weight: 500"
+    )
+
+    # конфиг для label_day (label_day_1 - label_day_31)
+    label_day_weekend_holiday = (
+        "color: #7F1D1D; "
+        "border: 1px solid #585959; "
+        "background-color: #FECACA; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 16px; "
+        "font-weight: 500;"
+    )
+
+    # конфиг для label_day (label_day_1 - label_day_31)
+    label_head_day_weekend_holiday = (
+        "color: #7F1D1D; "
+        "border: 1px solid #585959; "
+        "background-color: #FECACA; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 16px; "
+        "font-weight: 500;"
+    )
+
+    # конфиг для lineEdit_day (lineEdit_day_1 - lineEdit_day_31)
+    lineEdit_day_weekend_holiday = (
+        "color: #7F1D1D; "
+        "border: 1px solid #585959; "
+        "background-color: #FECACA; "
+        "border-radius: 8px; "
+        "padding: 4px 4px; "
+        "font-size: 16px; "
+        "font-weight: 500;"
+    )
+
 class WidgetTableZP:
     widget_table_zp = {
         "style": (
@@ -305,8 +349,8 @@ class WidgetTableZP:
     }
 
     label_zp = (
-        "color:  #F4F4F4; "
-        "background-color: #50526A; "
+        "color:  #E5E7EB; "
+        "background-color: #374151; "
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -319,8 +363,8 @@ class WidgetTableZP:
     )
 
     tableWidget_zp = (
-        "color: #1F2933;"
-        "background-color: #D9D6DF;"
+        "color: #E5E7EB;"
+        "background-color: #F4F4F4;"
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -350,8 +394,8 @@ class WidgetTableAvans:
     }
 
     label_avans = (
-        "color:  #F4F4F4; "
-        "background-color: #50526A; "
+        "color:  #E5E7EB; "
+        "background-color: #374151; "
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
@@ -364,8 +408,8 @@ class WidgetTableAvans:
     )
 
     tableWidget_avans = (
-        "color: #1F2933;"
-        "background-color: #D9D6DF;"
+        "color: #E5E7EB;"
+        "background-color: #F4F4F4;"
         "border-top: 2px solid #8B9491;"
         "border-left: 2px solid #8B9491;"
         "border-bottom: 2px solid #E6EBE9;"
