@@ -319,7 +319,7 @@ class StartWindow:
 
         if not calendar_int_icon.isNull():
             self.ui.label_calendar_icon.setPixmap(calendar_int_icon) # устанавливаем иконку
-            self.ui.label_calendar_icon.setFixedSize(70, 70) # устанавливаем размер иконки
+            self.ui.label_calendar_icon.setFixedSize(50, 50) # устанавливаем размер иконки
             self.ui.label_calendar_icon.setScaledContents(True) # масштабируем иконку
 
         self.ui.label_calendar_icon.setStyleSheet(self.widget_calendar.label_calendar_icon) # применяем стиль к label_calendar_icon
