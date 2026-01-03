@@ -64,12 +64,12 @@ class CalendarLogic:
 
         """ Определяем количество дней в месяце """
 
-        calendar_month = self.current_month_index + 1 # Определяем выбранный месяц календаря (индекс + 1)
+        calendar_month = self.current_month_index + 1 # Определяем выбранный месяц календаря (индекс + 1) 
         calendar_year = self.year # Определяем выбранный год календаря
-        calendar_days = monthrange(calendar_year, calendar_month)[1] # Определяем количество дней в выбранном месяце
+        calendar_days = monthrange(calendar_year, calendar_month)[1] # Определяем количество дней в выбранном месяце. [1] - последний день месяца
 
         if self.lineEdit_calendar is not None:
-            self.lineEdit_calendar.setText(str(calendar_days)) # Устанавливаем количество дней в выбранном месяце
+            self.lineEdit_calendar.setText(str(calendar_days)) # Устанавливаем количество дней в выбранном месяце. str - преобразуем число в строку
 
         """ Определякм количество нерабочих дней в месяце """
         
@@ -95,15 +95,15 @@ class CalendarLogic:
             # день считается нерабочим, если:
             # 1. он в списке праздников, ИЛИ
             # 2. это выходной (weekday >= 5) И он НЕ в списке рабочих выходных
-            is_holiday = current_date in self.non_working_days
-            is_weekend = current_date.weekday() >= 5
-            is_working_weekend = current_date in self.working_weekends
+            is_holiday = current_date in self.non_working_days # проверяем, является ли день праздником
+            is_weekend = current_date.weekday() >= 5 # проверяем, является ли день выходным (weekday >= 5: суббота=5, воскресенье=6)
+            is_working_weekend = current_date in self.working_weekends # проверяем, является ли день рабочим выходным
             
             if is_holiday or (is_weekend and not is_working_weekend):
                 non_working_days.append(current_date) # добавляем день в список нерабочих дней
 
         if self.lineEdit_weekend is not None: # если lineEdit_weekend не None
-            self.lineEdit_weekend.setText(str(len(non_working_days))) # Устанавливаем количество выходных дней
+            self.lineEdit_weekend.setText(str(len(non_working_days))) # Устанавливаем количество выходных дней. len - определяет количество элементов в списке
         
         """Определяем количество рабочих дней в месяце """
         
@@ -289,15 +289,15 @@ class CalendarLogic:
             
             # применяем стили в зависимости от типа дня
             if self.widget_days_zp_avans is not None:
-                if is_holiday:
+                if is_holiday: # если день праздник
                     label_day.setStyleSheet(self.widget_days_zp_avans.label_day_weekend_holiday) # подсветка праздников (красный фон)
                     label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day_weekend_holiday) # подсветка праздников (красный фон)
                     line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day_weekend_holiday) # подсветка праздников (красный фон)
-                elif is_weekend and not is_working_weekend:
+                elif is_weekend and not is_working_weekend: # если день выходной, но не рабочий выходной
                     label_day.setStyleSheet(self.widget_days_zp_avans.label_day_weekend_holiday) # подсветка выходных дней (красный фон)
                     label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day_weekend_holiday) # подсветка выходных дней (красный фон)
                     line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day_weekend_holiday) # подсветка выходных дней (красный фон)
-                else:
+                else: # для обычных рабочих дней устанавливаем стандартный стиль
                     label_day.setStyleSheet(self.widget_days_zp_avans.label_day) # для обычных рабочих дней устанавливаем стандартный стиль
                     label_head_day.setStyleSheet(self.widget_days_zp_avans.label_head_day) # для обычных рабочих дней устанавливаем стандартный стиль
                     line_edit_day.setStyleSheet(self.widget_days_zp_avans.lineEdit_day) # для обычных рабочих дней устанавливаем стандартный стиль

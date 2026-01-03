@@ -890,6 +890,7 @@ class Ui_CASH(object):
         self.widget_calendar.setSizeIncrement(QtCore.QSize(0, 0))
         self.widget_calendar.setObjectName("widget_calendar")
         self.verticalLayout_9 = QtWidgets.QVBoxLayout(self.widget_calendar)
+        self.verticalLayout_9.setContentsMargins(12, 12, 12, 12)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
         self.verticalLayout_8 = QtWidgets.QVBoxLayout()
         self.verticalLayout_8.setSpacing(0)

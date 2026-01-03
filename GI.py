@@ -1,6 +1,6 @@
 from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QHeaderView, QAbstractItemView, QLineEdit, QStackedLayout
 from PyQt6.QtCore import Qt, QSize
-from PyQt6.QtGui import QColor, QPixmap, QIcon
+from PyQt6.QtGui import QColor, QPixmap, QIcon, QIntValidator
 from MainLogic import CalendarLogic
 from __config import (AppWindowConfig, GeneralInformation, SecondaryInformation,
                       WidgetDaysZp, WidgetDaysAvans, WidgetDaysZpAvans,
@@ -231,7 +231,9 @@ class StartWindow:
                 line_edit = QLineEdit()
                 line_edit.setAlignment(Qt.AlignmentFlag.AlignCenter)
                 line_edit.setStyleSheet(self.widget_days_zp_avans.lineEdit_day)
-                # Не вызываем hide() - видимость управляется через QStackedLayout.setCurrentIndex()
+                # устанавливаем валидатор только для целых чисел (0-999999)
+                validator = QIntValidator(0, 999999)
+                line_edit.setValidator(validator)
                 
                 # получаем родительский layout (day_i)
                 day_layout = getattr(self.ui, f"day_{i}", None)
@@ -258,9 +260,9 @@ class StartWindow:
                         setattr(self.ui, f"lineEdit_day_{i}", line_edit) # сохраняем lineEdit как атрибут UI для доступа из MainLogic
                         
                         # подключаем обработчики событий
-                        label_day.mousePressEvent = lambda event, lbl=label_day: self.start_edit(lbl, event)
-                        line_edit.editingFinished.connect(lambda le=line_edit, lbl=label_day: self.finish_edit(lbl, le))
-                        line_edit.returnPressed.connect(lambda le=line_edit, lbl=label_day: self.finish_edit(lbl, le))
+                        label_day.mousePressEvent = lambda event, lbl=label_day: self.start_edit(lbl, event) # подключаем обработчик событий для label_day
+                        line_edit.editingFinished.connect(lambda le=line_edit, lbl=label_day: self.finish_edit(lbl, le)) # подключаем обработчик событий для line_edit
+                        line_edit.returnPressed.connect(lambda le=line_edit, lbl=label_day: self.finish_edit(lbl, le)) # подключаем обработчик событий для line_edit
 
 
         # _________________________________widget_table_zp_________________________________
@@ -407,56 +409,46 @@ class StartWindow:
 
         self.ui.tableWidget_calendar.setStyleSheet(self.widget_calendar.tableWidget_calendar) # применяем стиль к tableWidget_calendar
 
+    # функция для начала редактирования label_day
     def start_edit(self, label_day, event):
         """Начинаем редактирование label_day - переключаемся на QLineEdit"""
-        if label_day not in self.label_edits:
-            return
         
-        edit_data = self.label_edits[label_day]
-        line_edit = edit_data['line_edit']
-        stacked_layout = edit_data['stacked_layout']
+        edit_data = self.label_edits[label_day] # получаем данные из словаря label_edits
+        line_edit = edit_data['line_edit'] # получаем line_edit из данных
+        stacked_layout = edit_data['stacked_layout'] # получаем stacked_layout из данных
         
-        # сохраняем текущий редактируемый label
-        self.current_editing_label = label_day
+        self.current_editing_label = label_day # сохраняем текущий редактируемый label
         
-        # устанавливаем текст из label в lineEdit
-        line_edit.setText(label_day.text())
-        line_edit.selectAll()
+        line_edit.setText(label_day.text()) # устанавливаем текст из label в lineEdit
+        line_edit.selectAll() # выделяем весь текст в lineEdit
         
-        # переключаемся на lineEdit
-        stacked_layout.setCurrentIndex(1)
-        line_edit.setFocus()
+        stacked_layout.setCurrentIndex(1) # переключаемся на lineEdit (1 потому что индекс 0 - label, а индекс 1 - lineEdit)
+        line_edit.setFocus() # устанавливаем фокус на lineEdit
 
+    # функция для завершения редактирования label_day
     def finish_edit(self, label_day, line_edit):
         """Завершаем редактирование - сохраняем текст и переключаемся обратно на QLabel"""
-        if label_day not in self.label_edits:
-            return
         
         edit_data = self.label_edits[label_day] # получаем данные из словаря label_edits
         stacked_layout = edit_data['stacked_layout'] # получаем stacked_layout из данных
         
         # сохраняем текст из lineEdit в label
         text = line_edit.text() # получаем текст из lineEdit
-        if not text:
-            # переключаемся обратно на label без изменений
-            stacked_layout.setCurrentIndex(0)
-            # сбрасываем текущий редактируемый label
-            if self.current_editing_label == label_day:
-                self.current_editing_label = None
+        if not text: # если текст пустой
+            stacked_layout.setCurrentIndex(0) # переключаемся обратно на label (0 потому что индекс 0 - label, а индекс 1 - lineEdit)
+            if self.current_editing_label == label_day: # если текущий редактируемый label равен label_day
+                self.current_editing_label = None # сбрасываем текущий редактируемый label
             return
         
-        try:
+        # валидатор гарантирует, что текст является числом, но для надежности используем try-except
+        try: # в случае ошибки оставляем старое значение (не должно происходить благодаря валидатору)
             value = int(text) # преобразуем текст в число
             formatted_text = f"{value:,}".replace(",", " ") # заменяем запятые на пробелы
-
-            label_day.setText(formatted_text)
-        except ValueError:
-            # если введено не число, оставляем старое значение (не обновляем label)
-            pass
+            label_day.setText(formatted_text) # устанавливаем текст в label
+        except (ValueError, TypeError): # в случае ошибки оставляем старое значение (не должно происходить благодаря валидатору)
+            pass # оставляем старое значение (не должно происходить благодаря валидатору)
         
-        # переключаемся обратно на label
         stacked_layout.setCurrentIndex(0) # переключаемся обратно на label
         
-        # сбрасываем текущий редактируемый label
         if self.current_editing_label == label_day: # если текущий редактируемый label равен label_day
             self.current_editing_label = None # сбрасываем текущий редактируемый label

@@ -1755,6 +1755,21 @@
            </size>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_9">
+           <property name="spacing">
+            <number>-1</number>
+           </property>
+           <property name="leftMargin">
+            <number>12</number>
+           </property>
+           <property name="topMargin">
+            <number>12</number>
+           </property>
+           <property name="rightMargin">
+            <number>12</number>
+           </property>
+           <property name="bottomMargin">
+            <number>12</number>
+           </property>
            <item>
             <layout class="QVBoxLayout" name="verticalLayout_8">
              <property name="spacing">
