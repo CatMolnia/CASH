@@ -281,6 +281,21 @@ class StartWindow:
 
         self.ui.label_zp.setStyleSheet(self.widget_table_zp.label_zp) # применяем стиль к label_zp
         self.ui.tableWidget_zp.setStyleSheet(self.widget_table_zp.tableWidget_zp) # применяем стиль к tableWidget_zp
+        self.ui.label_all_zp.setStyleSheet(self.widget_table_zp.label_all_zp) # применяем стиль к label_all_zp
+        self.ui.label_total_zp.setStyleSheet(self.widget_table_zp.label_total_zp) # применяем стиль к label_total_zp
+        self.ui.label_all_zp_summ.setStyleSheet(self.widget_table_zp.label_all_zp_summ) # применяем стиль к label_all_zp_summ
+        self.ui.label_total_zp_summ.setStyleSheet(self.widget_table_zp.label_total_zp_summ) # применяем стиль к label_total_zp_summ
+
+        self.ui.tableWidget_zp.setColumnCount(2) # устанавливаем количество столбцов
+        self.ui.tableWidget_zp.setRowCount(3) # устанавливаем количество строк
+        self.ui.tableWidget_zp.horizontalHeader().setVisible(False) # устанавливаем видимость горизонтальных заголовков
+        self.ui.tableWidget_zp.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
+        self.ui.tableWidget_zp.setShowGrid(True) # устанавливаем видимость сетки
+        self.ui.tableWidget_zp.setFrameShape(self.ui.tableWidget_zp.Shape.NoFrame) # устанавливаем форму фрейма (фрейм - это рамка вокруг таблицы)
+        self.ui.tableWidget_zp.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
+        self.ui.tableWidget_zp.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
+        self.ui.tableWidget_zp.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки горизонтальной полосы
+        self.ui.tableWidget_zp.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки вертикальной полосы
 
         # _________________________________widget_table_avans__________________________________
 
@@ -298,6 +313,21 @@ class StartWindow:
 
         self.ui.label_avans.setStyleSheet(self.widget_table_avans.label_avans) # применяем стиль к label_avans
         self.ui.tableWidget_avans.setStyleSheet(self.widget_table_avans.tableWidget_avans) # применяем стиль к tableWidget_avans
+        self.ui.label_all_avans.setStyleSheet(self.widget_table_avans.label_all_avans) # применяем стиль к label_all_avans
+        self.ui.label_total_avans.setStyleSheet(self.widget_table_avans.label_total_avans) # применяем стиль к label_total_avans
+        self.ui.label_all_avans_summ.setStyleSheet(self.widget_table_avans.label_all_avans_summ) # применяем стиль к label_all_avans_summ
+        self.ui.label_total_avans_summ.setStyleSheet(self.widget_table_avans.label_total_avans_summ) # применяем стиль к label_total_avans_summ
+
+        self.ui.tableWidget_avans.setColumnCount(2) # устанавливаем количество столбцов
+        self.ui.tableWidget_avans.setRowCount(3) # устанавливаем количество строк
+        self.ui.tableWidget_avans.horizontalHeader().setVisible(False) # устанавливаем видимость горизонтальных заголовков
+        self.ui.tableWidget_avans.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
+        self.ui.tableWidget_avans.setShowGrid(True) # устанавливаем видимость сетки
+        self.ui.tableWidget_avans.setFrameShape(self.ui.tableWidget_avans.Shape.NoFrame) # устанавливаем форму фрейма (фрейм - это рамка вокруг таблицы)
+        self.ui.tableWidget_avans.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
+        self.ui.tableWidget_avans.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
+        self.ui.tableWidget_avans.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки горизонтальной полосы
+        self.ui.tableWidget_avans.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки вертикальной полосы
 
         # _________________________________calendar___________________________________
 
@@ -398,7 +428,7 @@ class StartWindow:
         # параметры tableWidget_calendar
         table.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
         table.setShowGrid(False) # устанавливаем видимость сетки
-        table.setFrameShape(table.Shape.NoFrame) # устанавливаем форму фрейма
+        table.setFrameShape(table.Shape.NoFrame) # устанавливаем форму фрейма (фрейм - это рамка вокруг таблицы)
         table.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
         table.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
         table.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff) # устанавливаем политику прокрутки горизонтальной полосы

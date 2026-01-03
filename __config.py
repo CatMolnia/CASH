@@ -242,7 +242,7 @@ class WidgetDaysZp:
             "y_offset": 6,
             "color": (0, 0, 0, 80)  # RGBA: черный с прозрачностью 80/255
         }
-    }    
+    }
 
 class WidgetDaysAvans:
     # конфиг для widget_days_avans
@@ -349,30 +349,124 @@ class WidgetTableZP:
     }
 
     label_zp = (
-        "color:  #E5E7EB; "
+        "QLabel {"
+        "color: #E5E7EB; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
         "background-color: #374151; "
-        "border-top: 2px solid #8B9491;"
-        "border-left: 2px solid #8B9491;"
-        "border-bottom: 2px solid #E6EBE9;"
-        "border-right: 2px solid #E6EBE9;"
-        "border-radius: 8px;"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 14px; "
-        "font-weight: 800;"
+        "}"
     )
 
     tableWidget_zp = (
-        "color: #E5E7EB;"
-        "background-color: #F4F4F4;"
-        "border-top: 2px solid #8B9491;"
-        "border-left: 2px solid #8B9491;"
-        "border-bottom: 2px solid #E6EBE9;"
-        "border-right: 2px solid #E6EBE9;"
-        "border-radius: 8px;"
-        "padding: 4px;"
-        "font-size: 12px;"
-        "font-weight: 500;"
+        "QTableWidget {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_all_zp = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_total_zp = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_all_zp_summ = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_total_zp_summ = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
 class WidgetTableAvans:
@@ -394,30 +488,124 @@ class WidgetTableAvans:
     }
 
     label_avans = (
-        "color:  #E5E7EB; "
+        "QLabel {"
+        "color: #E5E7EB; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
         "background-color: #374151; "
-        "border-top: 2px solid #8B9491;"
-        "border-left: 2px solid #8B9491;"
-        "border-bottom: 2px solid #E6EBE9;"
-        "border-right: 2px solid #E6EBE9;"
-        "border-radius: 8px;"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 14px; "
-        "font-weight: 800;"
+        "}"
     )
 
     tableWidget_avans = (
-        "color: #E5E7EB;"
-        "background-color: #F4F4F4;"
-        "border-top: 2px solid #8B9491;"
-        "border-left: 2px solid #8B9491;"
-        "border-bottom: 2px solid #E6EBE9;"
-        "border-right: 2px solid #E6EBE9;"
-        "border-radius: 8px;"
-        "padding: 4px;"
-        "font-size: 12px;"
-        "font-weight: 500;"
+        "QTableWidget {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_all_avans = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_total_avans = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_all_avans_summ = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
+    )
+
+    label_total_avans_summ = (
+        "QLabel {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
 class WidgetCalendar:
