@@ -185,31 +185,31 @@ class StartWindow:
 
         # _________________________________widget_days_zp_________________________________
         
-        dz_config = self.widget_days_zp.widget_days_zp # конфиг из конфига
-        self.ui.widget_days_zp.setStyleSheet(dz_config["style"]) # применяем стиль к виджету widget_days_zp
+        #dz_config = self.widget_days_zp.widget_days_zp # конфиг из конфига
+        #self.ui.widget_days_zp.setStyleSheet(dz_config["style"]) # применяем стиль к виджету widget_days_zp
         
         # добавляем эффект размытой тени (параметры из конфига)
-        shadow_params = dz_config["shadow"] # параметры из конфига
-        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
-        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
-        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
-        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
-        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
-        self.ui.widget_days_zp.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_zp
+        #shadow_params = dz_config["shadow"] # параметры из конфига
+        #shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        #shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        #shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        #shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        #shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        #self.ui.widget_days_zp.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_zp
 
         # _________________________________widget_days_avans_________________________________
         
-        da_config = self.widget_days_avans.widget_days_avans # конфиг из конфига
-        self.ui.widget_days_avans.setStyleSheet(da_config["style"]) # применяем стиль к виджету widget_days_avans
+        #da_config = self.widget_days_avans.widget_days_avans # конфиг из конфига
+        #self.ui.widget_days_avans.setStyleSheet(da_config["style"]) # применяем стиль к виджету widget_days_avans
         
         # добавляем эффект размытой тени (параметры из конфига)
-        shadow_params = da_config["shadow"] # параметры из конфига
-        shadow = QGraphicsDropShadowEffect() # эффект размытой тени
-        shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
-        shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
-        shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
-        shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
-        self.ui.widget_days_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_avans
+        #shadow_params = da_config["shadow"] # параметры из конфига
+        #shadow = QGraphicsDropShadowEffect() # эффект размытой тени
+        #shadow.setBlurRadius(shadow_params["blur_radius"]) # радиус размытия
+        #shadow.setXOffset(shadow_params["x_offset"]) # смещение по X
+        #shadow.setYOffset(shadow_params["y_offset"]) # смещение по Y
+        #shadow.setColor(QColor(*shadow_params["color"])) # цвет тени
+        #self.ui.widget_days_avans.setGraphicsEffect(shadow) # добавляем эффект размытой тени к виджету widget_days_avans
         
         # общая логика для widget_days_zp и widget_days_avans
         
@@ -319,7 +319,7 @@ class StartWindow:
 
         if not calendar_int_icon.isNull():
             self.ui.label_calendar_icon.setPixmap(calendar_int_icon) # устанавливаем иконку
-            self.ui.label_calendar_icon.setFixedSize(50, 50) # устанавливаем размер иконки
+            self.ui.label_calendar_icon.setFixedSize(70, 70) # устанавливаем размер иконки
             self.ui.label_calendar_icon.setScaledContents(True) # масштабируем иконку
 
         self.ui.label_calendar_icon.setStyleSheet(self.widget_calendar.label_calendar_icon) # применяем стиль к label_calendar_icon
