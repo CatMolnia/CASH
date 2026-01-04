@@ -330,69 +330,149 @@ class WidgetDaysAvans:
 class WidgetDaysZpAvans:
     # конфиг для label_head_day
     label_head_day = (
-        "color: #4B5563; "
-        "border: 1px solid #585959; "
-        "background-color: #F4F4F4; "
+        "QLabel {"
+        "color: #1F2937; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #D1D5DB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #F9FAFB"
+        ");"
+
+        "border: 1px solid #CBD5E1; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
+        "}"
     )
 
     # конфиг для label_day (label_day_1 - label_day_31)
     label_day = (
-        "color: #4B5563; "
-        "border: 1px solid #585959; "
-        "background-color: #F4F4F4; "
+        "QLabel {"
+        "color: #1F2937; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #D1D5DB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #F9FAFB"
+        ");"
+
+        "border: 1px solid #CBD5E1; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
+        "}"
     )
 
     # конфиг для lineEdit_day (lineEdit_day_1 - lineEdit_day_31)
     lineEdit_day = (
-        "color: #4B5563;"
-        "border: 1px solid #585959;"
-        "background-color: #F4F4F4;"
-        "border-radius: 8px;"
-        "padding: 4px 4px;"
-        "font-size: 16px;"
-        "font-weight: 500"
+        "QLineEdit {"
+        "color: #1F2937; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #D1D5DB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #F9FAFB"
+        ");"
+
+        "border: 1px solid #CBD5E1; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
     # конфиг для label_day (label_day_1 - label_day_31)
-    label_day_weekend_holiday = (
-        "color: #7F1D1D; "
-        "border: 1px solid #585959; "
-        "background-color: #FECACA; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
-    )
+    label_day_weekend_holiday = """
+        QLabel {
+            color: #7F1D1D;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 8px;
+
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #FCA5A5,
+                stop:0.5 #FDE2E2,
+                stop:1 #FEF2F2
+            );
+
+            border: 1px solid #585959;
+            border-top-color: #9CA3AF;
+            border-left-color: #9CA3AF;
+            border-bottom-color: #E5E7EB;
+            border-right-color: #E5E7EB;
+
+            border-radius: 8px;
+        }
+    """
 
     # конфиг для label_day (label_day_1 - label_day_31)
-    label_head_day_weekend_holiday = (
-        "color: #7F1D1D; "
-        "border: 1px solid #585959; "
-        "background-color: #FECACA; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
-    )
+    label_head_day_weekend_holiday = """
+        QLabel {
+            color: #7F1D1D;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 8px;
+
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #FCA5A5,
+                stop:0.5 #FDE2E2,
+                stop:1 #FEF2F2
+            );
+
+            border: 1px solid #585959;
+            border-top-color: #9CA3AF;
+            border-left-color: #9CA3AF;
+            border-bottom-color: #E5E7EB;
+            border-right-color: #E5E7EB;
+
+            border-radius: 8px;
+        }
+    """
 
     # конфиг для lineEdit_day (lineEdit_day_1 - lineEdit_day_31)
-    lineEdit_day_weekend_holiday = (
-        "color: #7F1D1D; "
-        "border: 1px solid #585959; "
-        "background-color: #FECACA; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
-    )
+    lineEdit_day_weekend_holiday = """
+        QLineEdit {
+            color: #7F1D1D;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 8px;
+
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #FCA5A5,
+                stop:0.5 #FDE2E2,
+                stop:1 #FEF2F2
+            );
+
+            border: 1px solid #585959;
+            border-top-color: #9CA3AF;
+            border-left-color: #9CA3AF;
+            border-bottom-color: #E5E7EB;
+            border-right-color: #E5E7EB;
+
+            border-radius: 8px;
+        }
+    """
+
+
+    #"color: #7F1D1D; "
+        #"border: 1px solid #585959; "
+        #"background-color: #FECACA; "
 
 class WidgetTableZP:
     widget_table_zp = {
