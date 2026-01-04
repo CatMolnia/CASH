@@ -290,7 +290,7 @@ class StartWindow:
         self.ui.tableWidget_zp.setRowCount(3) # устанавливаем количество строк
         self.ui.tableWidget_zp.horizontalHeader().setVisible(False) # устанавливаем видимость горизонтальных заголовков
         self.ui.tableWidget_zp.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
-        self.ui.tableWidget_zp.setShowGrid(True) # устанавливаем видимость сетки
+        self.ui.tableWidget_zp.setShowGrid(False) # устанавливаем видимость сетки
         self.ui.tableWidget_zp.setFrameShape(self.ui.tableWidget_zp.Shape.NoFrame) # устанавливаем форму фрейма (фрейм - это рамка вокруг таблицы)
         self.ui.tableWidget_zp.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
         self.ui.tableWidget_zp.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк
@@ -319,10 +319,10 @@ class StartWindow:
         self.ui.label_total_avans_summ.setStyleSheet(self.widget_table_avans.label_total_avans_summ) # применяем стиль к label_total_avans_summ
 
         self.ui.tableWidget_avans.setColumnCount(2) # устанавливаем количество столбцов
-        self.ui.tableWidget_avans.setRowCount(3) # устанавливаем количество строк
+        self.ui.tableWidget_avans.setRowCount(2) # устанавливаем количество строк
         self.ui.tableWidget_avans.horizontalHeader().setVisible(False) # устанавливаем видимость горизонтальных заголовков
         self.ui.tableWidget_avans.verticalHeader().setVisible(False) # устанавливаем видимость вертикальных заголовков
-        self.ui.tableWidget_avans.setShowGrid(True) # устанавливаем видимость сетки
+        self.ui.tableWidget_avans.setShowGrid(False) # устанавливаем видимость сетки
         self.ui.tableWidget_avans.setFrameShape(self.ui.tableWidget_avans.Shape.NoFrame) # устанавливаем форму фрейма (фрейм - это рамка вокруг таблицы)
         self.ui.tableWidget_avans.horizontalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры столбцов
         self.ui.tableWidget_avans.verticalHeader().setSectionResizeMode(QHeaderView.ResizeMode.Stretch) # подгоняем размеры строк

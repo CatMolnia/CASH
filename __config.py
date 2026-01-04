@@ -40,82 +40,130 @@ class GeneralInformation:
     )
 
     label_calendar = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
+        "QLabel {"
+        "color: #374151; "
         "font-size: 12px; "
-        "font-weight: 500;"
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
     label_work = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; " #CBD5E1
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
+        "QLabel {"
+        "color: #374151; "
         "font-size: 12px; "
-        "font-weight: 500;"
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
     label_weekend = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
+        "QLabel {"
+        "color: #374151; "
         "font-size: 12px; "
-        "font-weight: 500;"
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
     # конфиг для lineEdit
     lineEdit_calendar = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
+        "QLineEdit {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
+        "}"
     )
 
     lineEdit_work = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
+        "QLineEdit {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
+        "}"
     )
 
     lineEdit_weekend = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
+        "QLineEdit {"
+        "color: #374151; "
+        "font-size: 12px; "
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
         "border-radius: 8px; "
-        "padding: 4px 4px; "
-        "font-size: 16px; "
-        "font-weight: 500;"
+        "}"
     )
 
 class SecondaryInformation:
@@ -138,29 +186,45 @@ class SecondaryInformation:
     }
 
     label_day_zp = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
+        "QLabel {"
+        "color: #374151; "
         "font-size: 12px; "
-        "font-weight: 500;"
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
     label_day_avans = (
-        "color: #4B5563; "
-        "background-color: #F4F4F4; "
-        "border-top: 2px solid #94A3B8; "
-        "border-left: 2px solid #94A3B8; "
-        "border-bottom: 2px solid #E2E8F0; "
-        "border-right: 2px solid #E2E8F0; "
-        "border-radius: 8px; "
-        "padding: 4px 4px; "
+        "QLabel {"
+        "color: #374151; "
         "font-size: 12px; "
-        "font-weight: 500;"
+        "font-weight: 500; "
+        "padding: 6px 8px; "
+
+        "background-color: qlineargradient("
+        "x1:0, y1:0, x2:0, y2:1, "
+        "stop:0 #E5E7EB, "
+        "stop:0.5 #F3F4F6, "
+        "stop:1 #FFFFFF"
+        ");"
+
+        "border: 1px solid #D1D5DB; "
+        "border-top-color: #9CA3AF; "
+        "border-left-color: #9CA3AF; "
+        "border-radius: 8px; "
+        "}"
     )
 
     spinBox_zp = (
@@ -690,43 +754,95 @@ class WidgetCalendar:
 
     pushButton_last = """
         QPushButton {
-            background-color: #FFFFFF;
-            border-top: 2px solid #94A3B8;
-            border-left: 2px solid #94A3B8;
-            border-bottom: 2px solid #E2E8F0;
-            border-right: 2px solid #E2E8F0;
-            border-radius: 8px;
-            padding: 0px 20px;
+            color: #374151;
             font-size: 16px;
             font-weight: 500;
+            padding: 0px 20px;
+
+            /* базовый утопленный вид */
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #E5E7EB,
+                stop:0.5 #F3F4F6,
+                stop:1 #FFFFFF
+            );
+
+            border: 1px solid #D1D5DB;
+            border-top-color: #9CA3AF;
+            border-left-color: #9CA3AF;
+            border-bottom-color: #E5E7EB;
+            border-right-color: #E5E7EB;
+
+            border-radius: 8px;
         }
+
+        /* hover — слегка "поднимается" */
         QPushButton:hover {
-            background-color: #F0F0F0;
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #F3F4F6,
+                stop:1 #FFFFFF
+            );
         }
+
+        /* pressed — реально утоплен */
         QPushButton:pressed {
-            background-color: #D9D9D9;
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #D1D5DB,
+                stop:1 #E5E7EB
+            );
+
+            border-top-color: #6B7280;
+            border-left-color: #6B7280;
         }
-        """
+    """
 
     pushButton_next = """
         QPushButton {
-            background-color: #FFFFFF;
-            border-top: 2px solid #94A3B8;
-            border-left: 2px solid #94A3B8;
-            border-bottom: 2px solid #E2E8F0;
-            border-right: 2px solid #E2E8F0;
-            border-radius: 8px; 
-            padding: 0px 20px;  /* отступы внутри кнопки */
-            font-size: 16px;  /* размер текста */
-            font-weight: 500;  /* вес текста */
+            color: #374151;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 0px 20px;
+
+            /* базовый утопленный вид */
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #E5E7EB,
+                stop:0.5 #F3F4F6,
+                stop:1 #FFFFFF
+            );
+
+            border: 1px solid #D1D5DB;
+            border-top-color: #9CA3AF;
+            border-left-color: #9CA3AF;
+            border-bottom-color: #E5E7EB;
+            border-right-color: #E5E7EB;
+
+            border-radius: 8px;
         }
+
+        /* hover — слегка "поднимается" */
         QPushButton:hover {
-            background-color: #F0F0F0;
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #F3F4F6,
+                stop:1 #FFFFFF
+            );
         }
+
+        /* pressed — реально утоплен */
         QPushButton:pressed {
-            background-color: #D9D9D9;
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #D1D5DB,
+                stop:1 #E5E7EB
+            );
+
+            border-top-color: #6B7280;
+            border-left-color: #6B7280;
         }
-        """
+    """
 
     label_month = (
         "color: #4B5563; "
@@ -735,31 +851,53 @@ class WidgetCalendar:
 
     tableWidget_calendar = """
         QTableWidget {
-            background-color: #F4F4F4;
-            border-top: 2px solid #94A3B8;
-            border-left: 2px solid #94A3B8;
-            border-bottom: 2px solid #E2E8F0;
-            border-right: 2px solid #E2E8F0;
+            color: #374151;
+            font-size: 12px;
+
+            /* эффект вдавленности */
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #E5E7EB,
+                stop:0.5 #F3F4F6,
+                stop:1 #FFFFFF
+            );
+
+            border: 1px solid #D1D5DB;
+            border-top-color: #9CA3AF;
+            border-left-color: #9CA3AF;
+            border-bottom-color: #E5E7EB;
+            border-right-color: #E5E7EB;
+
+            border-radius: 12px;
             gridline-color: transparent;
+        }
+
+        /* Ячейки */
+        QTableWidget::item {
+            background: transparent;
+            padding: 4px 6px;
         }
 
         /* Заголовки столбцов */
         QHeaderView::section {
-            color: #4B5563;
-            background-color: #E5E7EB;
-            font-weight: 800;
+            color: #374151;
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #E5E7EB,
+                stop:1 #F3F4F6
+            );
+            font-weight: 600;
             font-size: 12px;
             border: none;
-            padding: 3px 6px;
+            padding: 4px 6px;
         }
 
-        /* Верхний левый угол */
+        /* Верхние углы */
         QHeaderView::section:horizontal:first {
-            border-top-left-radius: 10px;
+            border-top-left-radius: 12px;
         }
 
-        /* Верхний правый угол */
         QHeaderView::section:horizontal:last {
-            border-top-right-radius: 10px;
+            border-top-right-radius: 12px;
         }
     """
